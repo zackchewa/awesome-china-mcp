@@ -77,7 +77,7 @@ The deepest official coverage in the whole ecosystem — Alibaba Cloud alone shi
 | 腾讯地图 Tencent Maps | 🏢 [official MCP](https://lbs.qq.com/service/MCPServer/MCPServerGuide/overview) | location, routing, POI |
 | 飞常准 Variflight | 🏢 [`variflight/variflight-mcp`](https://github.com/variflight/variflight-mcp) ⭐31 · [`variflight/tripmatch-mcp`](https://github.com/variflight/tripmatch-mcp) | real-time flight info |
 | 12306 火车票 | 👥 [`Joooook/12306-mcp`](https://github.com/Joooook/12306-mcp) ⭐948 · [`drfccv/mcp-server-12306`](https://github.com/drfccv/mcp-server-12306) ⭐348 | train ticket search |
-| 携程 Ctrip | 👥 [`biaowuqiong/ctrip-hotel-skill`](https://github.com/biaowuqiong/ctrip-hotel-skill) | hotel price (Playwright) |
+| 携程 Ctrip | 👥 [`biaowuqiong/ctrip-hotel-skill`](https://github.com/biaowuqiong/ctrip-hotel-skill) | hotel price — Agent Skill via Playwright (not a native MCP server) |
 | 美团 Meituan | 👥 [`LewisChen1219/Meituan-Mcp-Server-WIP`](https://github.com/LewisChen1219/Meituan-Mcp-Server-WIP) | food ordering (WIP) |
 
 ## 💳 支付 · Payments
@@ -93,12 +93,12 @@ The deepest official coverage in the whole ecosystem — Alibaba Cloud alone shi
 |---|---|---|
 | 小红书 Xiaohongshu | 👥 [`xpzouying/xiaohongshu-mcp`](https://github.com/xpzouying/xiaohongshu-mcp) ⭐14.4k · [`iFurySt/RedNote-MCP`](https://github.com/iFurySt/RedNote-MCP) ⭐1k · [`aki66938/xhs-toolkit`](https://github.com/aki66938/xhs-toolkit) ⭐1.3k | read / search / publish |
 | 微信公众号 (发布) | 👥 [`caol64/wenyan-mcp`](https://github.com/caol64/wenyan-mcp) ⭐1.3k | auto-format & publish Markdown |
-| 微信公众号 (下载) | 👥 [`qiye45/wechatDownload`](https://github.com/qiye45/wechatDownload) ⭐8.3k | batch article download |
+| 微信公众号 (下载) | 👥 [`qiye45/wechatDownload`](https://github.com/qiye45/wechatDownload) ⭐8.3k | batch article download — tool with MCP/Skill support |
 | 微信读书 WeRead | 👥 [`freestylefly/mcp-server-weread`](https://github.com/freestylefly/mcp-server-weread) ⭐560 | books, notes, highlights |
 | Bilibili | 👥 [`huccihuang/bilibili-mcp-server`](https://github.com/huccihuang/bilibili-mcp-server) ⭐188 · [`34892002/bilibili-mcp-js`](https://github.com/34892002/bilibili-mcp-js) ⭐177 | search, video info |
-| 知乎 Zhihu | 👥 [`JasonJarvan/Zhihu-Collections-MCP`](https://github.com/JasonJarvan/Zhihu-Collections-MCP) ⭐145 · [`iteng007/zhihu-mcp-server`](https://github.com/iteng007/zhihu-mcp-server) | export, search, publish |
+| 知乎 Zhihu | 👥 [`iteng007/zhihu-mcp-server`](https://github.com/iteng007/zhihu-mcp-server) (API) · [`Douyh123/zhihu-mcp`](https://github.com/Douyh123/zhihu-mcp) (search/publish) · [`JasonJarvan/Zhihu-Collections-MCP`](https://github.com/JasonJarvan/Zhihu-Collections-MCP) ⭐145 (export) | API access, search, publish, export |
 | 微博 Weibo | 👥 [`qinyuanpei/mcp-server-weibo`](https://github.com/qinyuanpei/mcp-server-weibo) ⭐50 | user / content / hot-search |
-| 抖音 / B站 / 公众号 / 播客 (采集) | 👥 [`chubbyguan/chubbyskills`](https://github.com/chubbyguan/chubbyskills) ⭐496 | content → knowledge base |
+| 抖音 / B站 / 公众号 / 播客 (采集) | 👥 [`chubbyguan/chubbyskills`](https://github.com/chubbyguan/chubbyskills) ⭐496 | content-ingestion Agent Skills + a knowledge-base MCP (not per-app servers) |
 
 ## 🛒 电商 · E-commerce
 
@@ -113,9 +113,9 @@ The deepest official coverage in the whole ecosystem — Alibaba Cloud alone shi
 | App | Server | Notes |
 |---|---|---|
 | 飞书 / Lark | 🏢 [`larksuite/lark-openapi-mcp`](https://github.com/larksuite/lark-openapi-mcp) ⭐748 · 👥 [`ztxtxwd/open-feishu-mcp-server`](https://github.com/ztxtxwd/open-feishu-mcp-server) ⭐85 | docs, sheets, IM, calendar |
-| 语雀 Yuque | 🏢 [`yuque/yuque-mcp-server`](https://github.com/yuque/yuque-mcp-server) ⭐188 · [`yuque/yuque-ecosystem`](https://github.com/yuque/yuque-ecosystem) ⭐186 | knowledge base CRUD |
-| 钉钉 DingTalk | 👥 [`hykfft/mcp-dingtalk-doc`](https://github.com/hykfft/mcp-dingtalk-doc) ⭐50 · [`opsre/ZenOps`](https://github.com/opsre/ZenOps) ⭐160 | docs, ops bot |
-| 企业微信 WeCom | 👥 [`opsre/ZenOps`](https://github.com/opsre/ZenOps) ⭐160 | natural-language ops (钉钉+飞书+企微) |
+| 语雀 Yuque | 🏢 [`yuque/yuque-mcp-server`](https://github.com/yuque/yuque-mcp-server) ⭐188 (server) · [`yuque/yuque-ecosystem`](https://github.com/yuque/yuque-ecosystem) ⭐186 (server+skills+plugin bundle) | knowledge base CRUD |
+| 钉钉 DingTalk | 👥 [`hykfft/mcp-dingtalk-doc`](https://github.com/hykfft/mcp-dingtalk-doc) ⭐50 | DingTalk docs MCP |
+| 企业微信 WeCom | — no dedicated MCP yet · ops-bot: [`opsre/ZenOps`](https://github.com/opsre/ZenOps) ⭐160 | ZenOps queries ops resources via 钉钉/飞书/企微 bots (not a WeCom API connector) — PR one if you build it |
 
 ## 💻 开发工具 · DevTools
 
@@ -134,10 +134,9 @@ The deepest official coverage in the whole ecosystem — Alibaba Cloud alone shi
 | AKShare | 👥 [`aahl/mcp-aktools`](https://github.com/aahl/mcp-aktools) ⭐382 · [`zwldarren/akshare-one-mcp`](https://github.com/zwldarren/akshare-one-mcp) ⭐196 | stocks, crypto, analysis |
 | Tushare | 👥 [`zlinzzzz/finData-mcp-server`](https://github.com/zlinzzzz/finData-mcp-server) ⭐56 · [`hanxuanliang/tsrs-mcp-server`](https://github.com/hanxuanliang/tsrs-mcp-server) ⭐27 | financial data |
 | 东方财富 / 同花顺 | 👥 [`noimank/FNewsCrawler`](https://github.com/noimank/FNewsCrawler) ⭐109 · [`27dream/mcp-eastmoney`](https://github.com/27dream/mcp-eastmoney) | quotes, news, fund flow |
-| 通达信 TDX | 👥 search "通达信 MCP" (WorkBuddy) | real-time quotes, screening |
-| A股 Skill 集合 | 👥 [`shouldnotappearcalm/a-share-skill`](https://github.com/shouldnotappearcalm/a-share-skill) ⭐184 | quant, K-line, indicators |
+| A股 Skill 集合 | 👥 [`shouldnotappearcalm/a-share-skill`](https://github.com/shouldnotappearcalm/a-share-skill) ⭐184 | quant, K-line, indicators — Agent Skills collection (not an MCP server) |
 
-> 💡 **券商 (brokerages):** 广发证券, 国泰君安, 中信 etc. have launched internal AI "Skills" (智能投顾 贝塔牛, 易淘金, GF-Quant…), but these are app-internal agent capabilities, **not public MCP servers** you can connect to. For programmatic A股 market data, use 通达信 / AKShare / Tushare / 东方财富 above. PR a row if/when any brokerage ships a public MCP.
+> 💡 **券商 (brokerages):** 广发证券, 国泰君安, 中信 etc. have launched internal AI "Skills" (智能投顾 贝塔牛, 易淘金, GF-Quant…), but these are app-internal agent capabilities, **not public MCP servers** you can connect to. For programmatic A股 market data, use AKShare / Tushare / 东方财富 above. PR a row if/when any brokerage ships a public MCP.
 
 ## 🌦️ 天气 · Weather
 
@@ -162,7 +161,7 @@ The deepest official coverage in the whole ecosystem — Alibaba Cloud alone shi
 | Tool | Server | Notes |
 |---|---|---|
 | 中国数据核验 | 👥 [`CCCpan/data-verify-mcp`](https://github.com/CCCpan/data-verify-mcp) ⭐167 | ID / 企业 / 车辆 / OCR / risk |
-| 企业信息收集 | 👥 [`wgpsec/ENScan_GO`](https://github.com/wgpsec/ENScan_GO) ⭐4.5k | ICP备案 / 小程序 / 公众号 |
+| 企业信息收集 | 👥 [`wgpsec/ENScan_GO`](https://github.com/wgpsec/ENScan_GO) ⭐4.5k | ICP备案 / 小程序 / 公众号 — intel tool with MCP support |
 | 腾讯 Web 搜索 | 🏢 [`Tencent/WebSearchMCP`](https://github.com/Tencent/WebSearchMCP) | web search |
 
 ---
