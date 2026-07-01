@@ -203,6 +203,8 @@ Directories to *find* servers (not app connectors themselves):
 | [Glama — Awesome MCP Servers (中文)](https://glama.ai/mcp/servers) | curated 200+ ready-to-use servers, categorized |
 | [`LeslieLeung/awesome-mcp-server-cn`](https://github.com/LeslieLeung/awesome-mcp-server-cn) · [`yzfly/Awesome-MCP-ZH`](https://github.com/yzfly/Awesome-MCP-ZH) | open-source awesome-lists |
 
+*See also (global hubs, not China-specific):* [PulseMCP](https://www.pulsemcp.com) (servers + clients + trends) · [Smithery](https://smithery.ai) (beginner-friendly, copy-paste install) · [mcpservers.org](https://mcpservers.org) (curated, quality-focused).
+
 ## 🖥️ 客户端与开发平台 · Clients & Dev Platforms
 
 Where you *run* MCP servers — connect any entry above to one of these:
