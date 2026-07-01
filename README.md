@@ -132,12 +132,28 @@ The deepest official coverage in the whole ecosystem — Alibaba Cloud alone shi
 
 | App | Server | Notes |
 |---|---|---|
+| FinanceMCP (综合) | 👥 [`guangxiangdebizi/FinanceMCP`](https://github.com/guangxiangdebizi/FinanceMCP) ⭐616 | Tushare + Binance — A股/macro/crypto, real-time |
 | AKShare | 👥 [`aahl/mcp-aktools`](https://github.com/aahl/mcp-aktools) ⭐382 · [`zwldarren/akshare-one-mcp`](https://github.com/zwldarren/akshare-one-mcp) ⭐196 | stocks, crypto, analysis |
 | Tushare | 👥 [`zlinzzzz/finData-mcp-server`](https://github.com/zlinzzzz/finData-mcp-server) ⭐56 · [`hanxuanliang/tsrs-mcp-server`](https://github.com/hanxuanliang/tsrs-mcp-server) ⭐27 | financial data |
 | 东方财富 / 同花顺 | 👥 [`noimank/FNewsCrawler`](https://github.com/noimank/FNewsCrawler) ⭐109 · [`27dream/mcp-eastmoney`](https://github.com/27dream/mcp-eastmoney) | quotes, news, fund flow |
 | A股 Skill 集合 | 👥 [`shouldnotappearcalm/a-share-skill`](https://github.com/shouldnotappearcalm/a-share-skill) ⭐184 | quant, K-line, indicators — Agent Skills collection (not an MCP server) |
 
 > 💡 **券商 (brokerages):** 广发证券, 国泰君安, 中信 etc. have launched internal AI "Skills" (智能投顾 贝塔牛, 易淘金, GF-Quant…), but these are app-internal agent capabilities, **not public MCP servers** you can connect to. For programmatic A股 market data, use AKShare / Tushare / 东方财富 above. PR a row if/when any brokerage ships a public MCP.
+
+## ⚖️ 法律 · Legal (China)
+
+| Domain | Server | Notes |
+|---|---|---|
+| 中国法律法规 | 👥 [`Yuhamixli/Law-Crawler-RPA-RAG-MCP`](https://github.com/Yuhamixli/Law-Crawler-RPA-RAG-MCP) ⭐25 | crawl 中国法律法规 + RAG Q&A |
+| 法规检索 / 案例 | 👥 [`moyupeng0422/legal-tools`](https://github.com/moyupeng0422/legal-tools) ⭐7 | Chinese-law MCP + Skills: statutes, cases |
+
+## 📚 学术 · Academic & Research
+
+| Source | Server | Notes |
+|---|---|---|
+| 多源论文 (arXiv/PubMed/…) | 👥 [`openags/paper-search-mcp`](https://github.com/openags/paper-search-mcp) ⭐2k · [nodejs](https://github.com/Dianel555/paper-search-mcp-nodejs) ⭐172 | search + download academic papers |
+| 知网 CNKI | 👥 [`xxxxchaos/cnki-mcp-server`](https://github.com/xxxxchaos/cnki-mcp-server) | Chinese academic search |
+| AMiner | 👥 [`huanghuoguoguo/aminer-mcp`](https://github.com/huanghuoguoguo/aminer-mcp) | scholars, papers, patents (free tier) |
 
 ## 🌦️ 天气 · Weather
 
@@ -175,6 +191,8 @@ The deepest official coverage in the whole ecosystem — Alibaba Cloud alone shi
 | Tool | Server | Notes |
 |---|---|---|
 | 中国数据核验 | 👥 [`CCCpan/data-verify-mcp`](https://github.com/CCCpan/data-verify-mcp) ⭐167 | ID / 企业 / 车辆 / OCR / risk |
+| 工商企业大数据 | 👥 [`handaas/mcp-server`](https://github.com/handaas/mcp-server) ⭐8 · [`handaas/enterprise-mcp-server`](https://github.com/handaas/enterprise-mcp-server) | 工商信息 / 风险 / 股权 / 知识产权 (旷湖) |
+| 快递 / 工商 / 发票 / 三要素 | 👥 [`FLYKID/THMCP`](https://github.com/FLYKID/THMCP) ⭐6 | 瞳虎 — logistics, biz-reg, invoice, ID verify |
 | 企业信息收集 | 👥 [`wgpsec/ENScan_GO`](https://github.com/wgpsec/ENScan_GO) ⭐4.5k | ICP备案 / 小程序 / 公众号 — intel tool with MCP support |
 | 腾讯 Web 搜索 | 🏢 [`Tencent/WebSearchMCP`](https://github.com/Tencent/WebSearchMCP) | web search |
 
