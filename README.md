@@ -191,6 +191,31 @@ If you'd rather not self-host, these proprietary platforms act as the "Composio 
 | [扣子 Coze 插件市场](https://www.coze.cn/store/plugin) | 700+ plugins, bound to Coze agents | ❌ |
 | 腾讯元器 / 火山引擎 MCP | cloud MCP marketplaces | ❌ |
 
+## 🧭 MCP 资源站 / Hubs · Registries & discovery
+
+Directories to *find* servers (not app connectors themselves):
+
+| Hub | What |
+|---|---|
+| [魔搭 ModelScope MCP 广场](https://modelscope.cn/mcp) | 1400+ servers, biggest Chinese MCP community, SSE / local |
+| [mcp.so](https://mcp.so) | global "app store", 10,000+ servers, STDIO + SSE |
+| [AIbase MCP 资源站](https://www.aibase.com/zh/repos/topic/mcp) | 400+ production servers, Chinese tutorials, beginner-friendly |
+| [Glama — Awesome MCP Servers (中文)](https://glama.ai/mcp/servers) | curated 200+ ready-to-use servers, categorized |
+| [`LeslieLeung/awesome-mcp-server-cn`](https://github.com/LeslieLeung/awesome-mcp-server-cn) · [`yzfly/Awesome-MCP-ZH`](https://github.com/yzfly/Awesome-MCP-ZH) | open-source awesome-lists |
+
+## 🖥️ 客户端与开发平台 · Clients & Dev Platforms
+
+Where you *run* MCP servers — connect any entry above to one of these:
+
+| Tool | What |
+|---|---|
+| [OpenClaw Launch](https://openclawlaunch.com) | deploy a hosted AI agent that uses these MCP tools in one click |
+| [Cherry Studio](https://github.com/CherryHQ/cherry-studio) ⭐48k | 国产 desktop AI client, visual MCP config + auto-install |
+| Cursor / Cline / VS Code | dev tools — add servers via `mcp.json` |
+| [扣子 Coze](https://www.coze.cn) / [Trae](https://www.trae.ai) | ByteDance agent builder + AI IDE, both with MCP markets |
+| [百度千帆 AppBuilder](https://appbuilder.cloud.baidu.com) | Baidu AI app platform, MCP Server config + SSE |
+| [腾讯云大模型知识引擎](https://cloud.tencent.com/product/lke) | Tencent Cloud agent builder, add MCP plugins on demand |
+
 ---
 
 ## 🤝 Contributing / 贡献
