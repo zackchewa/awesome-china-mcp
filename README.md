@@ -115,6 +115,7 @@ The deepest official coverage in the whole ecosystem — Alibaba Cloud alone shi
 | 飞书 / Lark | 🏢 [`larksuite/lark-openapi-mcp`](https://github.com/larksuite/lark-openapi-mcp) ⭐748 · 👥 [`ztxtxwd/open-feishu-mcp-server`](https://github.com/ztxtxwd/open-feishu-mcp-server) ⭐85 | docs, sheets, IM, calendar |
 | 语雀 Yuque | 🏢 [`yuque/yuque-mcp-server`](https://github.com/yuque/yuque-mcp-server) ⭐188 (server) · [`yuque/yuque-ecosystem`](https://github.com/yuque/yuque-ecosystem) ⭐186 (server+skills+plugin bundle) | knowledge base CRUD |
 | 钉钉 DingTalk | 👥 [`hykfft/mcp-dingtalk-doc`](https://github.com/hykfft/mcp-dingtalk-doc) ⭐50 | DingTalk docs MCP |
+| 石墨文档 Shimo | 👥 [`kanyun-inc/rush-shimo-cli`](https://github.com/kanyun-inc/rush-shimo-cli) | read Shimo docs — CLI + SDK + MCP |
 | 企业微信 WeCom | — no dedicated MCP yet · ops-bot: [`opsre/ZenOps`](https://github.com/opsre/ZenOps) ⭐160 | ZenOps queries ops resources via 钉钉/飞书/企微 bots (not a WeCom API connector) — PR one if you build it |
 
 ## 💻 开发工具 · DevTools
@@ -145,6 +146,19 @@ The deepest official coverage in the whole ecosystem — Alibaba Cloud alone shi
 | 彩云天气 Caiyun | 👥 [`caiyunapp/mcp-caiyun-weather`](https://github.com/caiyunapp/mcp-caiyun-weather) | minute-level forecast |
 | 心知天气 Seniverse | 👥 [`sugarforever/mcp-seniverse-weather`](https://github.com/sugarforever/mcp-seniverse-weather) | city weather |
 | 高德 / 百度天气 | (via Amap / Baidu Map tools, see Maps) | city weather |
+
+## 🎵 音乐 · Music
+
+| App | Server | Notes |
+|---|---|---|
+| 网易云 / QQ音乐 / 酷狗 / 酷我 | 👥 [`ELDment/Meting-Agent`](https://github.com/ELDment/Meting-Agent) ⭐94 | multi-platform music API proxy for AI |
+| 网易云音乐 NetEase | 👥 [`Cheiineeey/netease-music-mcp`](https://github.com/Cheiineeey/netease-music-mcp) ⭐41 | play, lyrics sync, playlist mgmt |
+
+## 🏠 智能家居 / IoT · Smart Home
+
+| App | Server | Notes |
+|---|---|---|
+| 小米 米家 Mijia | 👥 [`handsomejustin/mijia-control`](https://github.com/handsomejustin/mijia-control) ⭐51 | 米家 × MCP × HomeKit smart-home bridge |
 
 ## 🤖 大模型与 AI 服务 · LLM & AI Services
 
