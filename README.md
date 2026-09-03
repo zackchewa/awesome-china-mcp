@@ -82,7 +82,7 @@ The deepest official coverage in the whole ecosystem — Alibaba Cloud alone shi
 | 腾讯地图 Tencent Maps | 🏢 [official MCP](https://lbs.qq.com/service/MCPServer/MCPServerGuide/overview) — `https://mcp.map.qq.com/mcp?key=<KEY>` | geocode, POI, routing, weather; remote MCP, key from [console](https://lbs.qq.com/dev/console/application/mine) |
 | 滴滴出行 DiDi | 🏢 official remote MCP — `https://mcp.didichuxing.com/mcp-servers?key=<KEY>` ([portal](https://mcp.didichuxing.com/)) | hail a ride: fare estimate, place order, trip status, cancel + maps; sandbox endpoint `…/mcp-servers-sandbox` |
 | 飞常准 Variflight | 🏢 [`variflight/variflight-mcp`](https://github.com/variflight/variflight-mcp) ⭐31 · [`variflight/tripmatch-mcp`](https://github.com/variflight/tripmatch-mcp) | real-time flight info |
-| 12306 火车票 | 👥 [`Joooook/12306-mcp`](https://github.com/Joooook/12306-mcp) ⭐948 · [`drfccv/mcp-server-12306`](https://github.com/drfccv/mcp-server-12306) ⭐348 | train ticket search |
+| 12306 火车票 | 👥 [`Joooook/12306-mcp`](https://github.com/Joooook/12306-mcp) ⭐948 · [`drfccv/mcp-server-12306`](https://github.com/drfccv/mcp-server-12306) ⭐348 | train ticket search · [`boy-373/12306-train-mcp`](https://github.com/boy-373/12306-train-mcp) 🌐 [free hosted](https://mcp.pianam.cn/train-mcp/mcp) | train ticket search; boy-373: 余票/时刻表, 中文车站名, 远程免 key |
 | 携程 Ctrip | 👥 [`biaowuqiong/ctrip-hotel-skill`](https://github.com/biaowuqiong/ctrip-hotel-skill) | hotel price — Agent Skill via Playwright (not a native MCP server) |
 | 美团 Meituan | 👥 [`LewisChen1219/Meituan-Mcp-Server-WIP`](https://github.com/LewisChen1219/Meituan-Mcp-Server-WIP) | food ordering (WIP) |
 
@@ -98,6 +98,7 @@ The deepest official coverage in the whole ecosystem — Alibaba Cloud alone shi
 | App | Server | Notes |
 |---|---|---|
 | 小红书 Xiaohongshu | 👥 [`xpzouying/xiaohongshu-mcp`](https://github.com/xpzouying/xiaohongshu-mcp) ⭐14.4k · [`iFurySt/RedNote-MCP`](https://github.com/iFurySt/RedNote-MCP) ⭐1k · [`aki66938/xhs-toolkit`](https://github.com/aki66938/xhs-toolkit) ⭐1.3k | read / search / publish |
+| 全网热榜 Hot Trending | 👥 [`boy-373/hot-trending-mcp`](https://github.com/boy-373/hot-trending-mcp) · 🌐 [free hosted](https://mcp.pianam.cn/hot-mcp/mcp) | 微博/知乎/B站/百度/头条/抖音/贴吧/掘金 8 平台热榜一次调用；远程免 key，缓存 5 分钟，限流 60/min |
 | 微信公众号 (发布) | 👥 [`caol64/wenyan-mcp`](https://github.com/caol64/wenyan-mcp) ⭐1.3k | auto-format & publish Markdown |
 | 微信公众号 (下载) | 👥 [`qiye45/wechatDownload`](https://github.com/qiye45/wechatDownload) ⭐8.3k | batch article download — tool with MCP/Skill support |
 | 微信读书 WeRead | 👥 [`freestylefly/mcp-server-weread`](https://github.com/freestylefly/mcp-server-weread) ⭐560 | books, notes, highlights |
@@ -151,6 +152,7 @@ The deepest official coverage in the whole ecosystem — Alibaba Cloud alone shi
 
 | App | Server | Notes |
 |---|---|---|
+| 汇率换算 Exchange Rate | 👥 [`boy-373/exchange-rate-mcp`](https://github.com/boy-373/exchange-rate-mcp) · 🌐 [free hosted](https://mcp.pianam.cn/exchange-mcp/mcp) | 实时汇率+金额换算，ISO 代码/中文货币名；ECB 参考汇率，远程免 key |
 | FinanceMCP (综合) | 👥 [`guangxiangdebizi/FinanceMCP`](https://github.com/guangxiangdebizi/FinanceMCP) ⭐616 | Tushare + Binance — A股/macro/crypto, real-time |
 | AKShare | 👥 [`aahl/mcp-aktools`](https://github.com/aahl/mcp-aktools) ⭐382 · [`zwldarren/akshare-one-mcp`](https://github.com/zwldarren/akshare-one-mcp) ⭐196 | stocks, crypto, analysis |
 | Tushare | 👥 [`zlinzzzz/finData-mcp-server`](https://github.com/zlinzzzz/finData-mcp-server) ⭐56 · [`hanxuanliang/tsrs-mcp-server`](https://github.com/hanxuanliang/tsrs-mcp-server) ⭐27 | financial data |
@@ -178,6 +180,7 @@ The deepest official coverage in the whole ecosystem — Alibaba Cloud alone shi
 
 | App | Server | Notes |
 |---|---|---|
+| 全球天气(中文) | 👥 [`boy-373/weather-mcp-china`](https://github.com/boy-373/weather-mcp-china) · 🌐 [free hosted](https://mcp.pianam.cn/weather-mcp/mcp) | 当前天气+1-7天预报，中文城市名/中文输出；Open-Meteo + wttr.in 回退，远程免 key |
 | 彩云天气 Caiyun | 👥 [`caiyunapp/mcp-caiyun-weather`](https://github.com/caiyunapp/mcp-caiyun-weather) | minute-level forecast |
 | 心知天气 Seniverse | 👥 [`sugarforever/mcp-seniverse-weather`](https://github.com/sugarforever/mcp-seniverse-weather) | city weather |
 | 高德 / 百度天气 | (via Amap / Baidu Map tools, see Maps) | city weather |
@@ -209,6 +212,7 @@ The deepest official coverage in the whole ecosystem — Alibaba Cloud alone shi
 
 | Tool | Server | Notes |
 |---|---|---|
+| IP 归属地 | 👥 [`boy-373/ip-location-mcp`](https://github.com/boy-373/ip-location-mcp) · 🌐 [free hosted](https://mcp.pianam.cn/ip-mcp/mcp) | IPv4 归属地/时区/运营商/ASN，中文输出；ip-api + ipwho.is 回退，远程免 key |
 | 中国数据核验 | 👥 [`CCCpan/data-verify-mcp`](https://github.com/CCCpan/data-verify-mcp) ⭐167 | ID / 企业 / 车辆 / OCR / risk |
 | 工商企业大数据 | 👥 [`handaas/mcp-server`](https://github.com/handaas/mcp-server) ⭐8 · [`handaas/enterprise-mcp-server`](https://github.com/handaas/enterprise-mcp-server) | 工商信息 / 风险 / 股权 / 知识产权 (旷湖) |
 | 快递 / 工商 / 发票 / 三要素 | 👥 [`FLYKID/THMCP`](https://github.com/FLYKID/THMCP) ⭐6 | 瞳虎 — logistics, biz-reg, invoice, ID verify |
