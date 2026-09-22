@@ -101,6 +101,7 @@ The deepest official coverage in the whole ecosystem — Alibaba Cloud alone shi
 | 小红书 Xiaohongshu | 👥 [`xpzouying/xiaohongshu-mcp`](https://github.com/xpzouying/xiaohongshu-mcp) ⭐15.6k · [`iFurySt/RedNote-MCP`](https://github.com/iFurySt/RedNote-MCP) ⭐1.1k · [`aki66938/xhs-toolkit`](https://github.com/aki66938/xhs-toolkit) ⭐1.3k | read / search / publish |
 | 微信公众号 (发布) | 👥 [`caol64/wenyan-mcp`](https://github.com/caol64/wenyan-mcp) ⭐1.3k | auto-format & publish Markdown |
 | 微信公众号 (下载) | 👥 [`qiye45/wechatDownload`](https://github.com/qiye45/wechatDownload) ⭐9.2k | batch article download — tool with MCP/Skill support |
+| 微信公众号 (AI 阅读) | 👥 [ReadGZH](https://github.com/sweesama/readgzh) · [接入文档](https://readgzh.site/docs) | hosted remote MCP: public article URL → Markdown; search cached articles only; limited anonymous access, optional API key |
 | 微信读书 WeRead | 👥 [`freestylefly/mcp-server-weread`](https://github.com/freestylefly/mcp-server-weread) ⭐574 | books, notes, highlights |
 | Bilibili | 👥 [`huccihuang/bilibili-mcp-server`](https://github.com/huccihuang/bilibili-mcp-server) ⭐190 · [`34892002/bilibili-mcp-js`](https://github.com/34892002/bilibili-mcp-js) ⭐192 | search, video info |
 | 知乎 Zhihu | 👥 [`iteng007/zhihu-mcp-server`](https://github.com/iteng007/zhihu-mcp-server) (API) · [`Douyh123/zhihu-mcp`](https://github.com/Douyh123/zhihu-mcp) (search/publish) · [`JasonJarvan/Zhihu-Collections-MCP`](https://github.com/JasonJarvan/Zhihu-Collections-MCP) ⭐169 (export) | API access, search, publish, export |
