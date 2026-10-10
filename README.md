@@ -108,6 +108,7 @@ The deepest official coverage in the whole ecosystem — Alibaba Cloud alone shi
 | 微博 Weibo | 👥 [`qinyuanpei/mcp-server-weibo`](https://github.com/qinyuanpei/mcp-server-weibo) ⭐61 | user / content / hot-search |
 | 抖音 Douyin (发布) | 👥 [`lancelin111/douyin-mcp-server`](https://github.com/lancelin111/douyin-mcp-server) ⭐36 | automated video upload |
 | 抖音 / B站 / 公众号 / 播客 (采集) | 👥 [`chubbyguan/chubbyskills`](https://github.com/chubbyguan/chubbyskills) ⭐1.1k | content-ingestion Agent Skills + a knowledge-base MCP (not per-app servers) |
+| AIHOT（中文 AI 资讯） | 🏢 🌐 [官方 MCP 文档](https://aihot.news/agent?tab=mcp) | hosted Streamable HTTP — `https://aihot.news/api/mcp`; anonymous read-only topic search, hot events, daily / weekly / monthly briefs |
 
 ## 🛒 电商 · E-commerce
 
