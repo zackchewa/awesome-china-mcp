@@ -512,3 +512,6 @@ Know a Chinese-app MCP server that's missing — especially an **official** one?
 ---
 
 <p align="center"><sub>Maintained by <a href="https://openclawlaunch.com">OpenClaw Launch</a> — deploy an AI agent that connects to all of these in one click. · 星标 ⭐ 让更多人发现这个清单。</sub></p>
+
+- [DoomPay](https://github.com/doomsday-network/doom-pay) - Non-custodial 3-line Web3 checkout widget, REST API, and remote MCP payment receipt verifier (`wDOOM` on Base Mainnet & `DOOM` Layer-1).
+- [BountyGuard](https://github.com/doomsday-network/bounty-guard) - Zero-dependency MCP security server & CLI auditor that verifies on-chain bounty escrow before AI agents start work.
