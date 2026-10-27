@@ -221,6 +221,7 @@ The deepest official coverage in the whole ecosystem — Alibaba Cloud alone shi
 
 | Provider | Server | Notes |
 |---|---|---|
+| LifeVerse | 🏢 official remote MCP — `https://lifeverse.gufreelancer.com/api/mcp` ([guide](https://lifeverse.gufreelancer.com/mcp)) · 🏢 [`lifeversegu/lifeverse-mcp`](https://github.com/lifeversegu/lifeverse-mcp) | discover, search and recommend 11 public LifeVerse AI products; Streamable HTTP, anonymous, read-only |
 | MiniMax | 🏢 [`MiniMax-AI/MiniMax-MCP`](https://github.com/MiniMax-AI/MiniMax-MCP) ⭐1.6k · [JS](https://github.com/MiniMax-AI/MiniMax-MCP-JS) ⭐130 | TTS, voice clone, image & video gen |
 | 魔搭 ModelScope | 🏢 [`modelscope/modelscope-mcp-server`](https://github.com/modelscope/modelscope-mcp-server) · 🌐 [MCP 广场 1400+](https://modelscope.cn/brand/view/MCP) | models + biggest CN MCP hub |
 | 智谱 Zhipu (GLM) | 🏢 official remote MCP ×3 — `https://open.bigmodel.cn/api/mcp/{web_search_prime,web_reader,zread}/mcp` ([docs](https://docs.bigmodel.cn/cn/coding-plan/mcp/search-mcp-server); needs a GLM Coding Plan key) · 👥 [`wnzzer/zhipu-tools-coding-plan`](https://github.com/wnzzer/zhipu-tools-coding-plan) · [`NanguangChou/zhipu_image_mcp`](https://github.com/NanguangChou/zhipu_image_mcp) | web search, page reader, Zread (read any GitHub repo's docs, tree and files), image gen |
