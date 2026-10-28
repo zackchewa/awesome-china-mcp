@@ -249,7 +249,7 @@ The deepest official coverage in the whole ecosystem — Alibaba Cloud alone shi
 | 博查 AI 搜索 Bocha | 🏢 [`BochaAI/bocha-search-mcp`](https://github.com/BochaAI/bocha-search-mcp) ⭐185 | Chinese web search — pages, news, images; the practical way to give a CN agent fresh sources |
 | TextIn 合合信息 (IntSig) | 🏢 [`intsig-textin/textin-mcp`](https://github.com/intsig-textin/textin-mcp) ⭐29 | document parsing: PDF / image → Markdown, preserving headings, tables and layout |
 | 多平台通知推送 | 👥 [`aahl/mcp-notify`](https://github.com/aahl/mcp-notify) ⭐28 | one server pushes to Bark / 微信 / 钉钉 / 飞书 / Telegram |
-| 本地/私网/国内 IM 聚合 MCP | 👥 [`shcdwz1234/Everything2MCP`](https://github.com/shcdwz1234/Everything2MCP) | OpenAPI/gRPC/MQTT/queues + 飞书/钉钉/企业微信; hot-reload + Safe defaults; `npx everything2mcp` |
+| Everything2MCP 本地/私网协议聚合 | 👥 [`shcdwz1234/Everything2MCP`](https://github.com/shcdwz1234/Everything2MCP) | OpenAPI/gRPC/MQTT/queues; hot-reload; business writes disabled by default; experimental, limited 飞书/钉钉/企业微信 adapters; `npx everything2mcp` |
 
 ---
 
