@@ -72,6 +72,7 @@ The deepest official coverage in the whole ecosystem — Alibaba Cloud alone shi
 | 七牛云 Qiniu | 🏢 [`qiniu/qiniu-mcp-server`](https://github.com/qiniu/qiniu-mcp-server) ⭐39 | storage, upload, CDN |
 | 华为云 Huawei Cloud | 🏢 official remote MCP — endpoint issued per-account from your console ([dev portal](https://developer.huaweicloud.com/)) | BYO endpoint URL; hosts under `huaweicloud.com` / `myhuaweicloud.com` |
 | 腾讯云开发 CloudBase | 🏢 official remote MCP — `https://tcb-api.cloud.tencent.com/mcp/v1?env_id=<EnvId>` · 🏢 [`TencentCloudBase/CloudBase-AI-Toolkit`](https://github.com/TencentCloudBase/CloudBase-AI-Toolkit) ⭐1.1k | the backend most 微信小程序 run on: cloud database, functions, storage, hosting, logs. Auth is `X-TencentCloud-SecretId/SecretKey` headers or OAuth — use a sub-account key scoped to TCB only; the default toolset can mint credentials |
+| 百智云浏览器 Baizhi Cloud Browser (CapyBrowser) | 🏢 🌐 [official remote MCP](https://capybrowser.app.baizhi.cloud/docs/installation.md) | browser session and profile management; own API key required, browser runtime is billed; page control requires a separate compatible CDP client |
 | 百度智能云 Mochow (向量库) | 🏢 [`baidu/mochow-mcp-server-python`](https://github.com/baidu/mochow-mcp-server-python) | vector database |
 
 ## 🗺️ 地图与出行 · Maps & Travel
