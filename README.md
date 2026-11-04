@@ -42,7 +42,22 @@ Configure an MCP-compatible client for the servers below — Claude Desktop, Cur
 
 > 🧩 **Also in here:** a [gap map](#gap-map) recording 78 official-API services from the 2026-10-10 survey, plus separately labelled [official Skills and APIs](#official-skills-and-apis). An API or Skill is not automatically an MCP server.
 
-> 🗓️ Full links, stars & archive survey: **2026-10-10** · selected catalog additions and official documentation checked **2026-10-27** · gap map last re-swept **2026-10-10**. The latest update is a documentation review, not an authenticated end-to-end test of every service.
+> 🗓️ Full links, stars & archive survey: **2026-10-10** · selected catalog additions and official documentation checked **2026-11-03** · gap map last re-swept **2026-10-10**. The latest update is a documentation review, not an authenticated end-to-end test of every service.
+
+### 使用前要授权什么？· What will I be asked to authorize?
+
+Check the Notes column first; rows that need something unusual say so. Otherwise most entries fall into one of these:
+
+| 授权方式 Auth type | 你交出去的是什么 What you hand over | 建议 Advice |
+|---|---|---|
+| 无需凭证 No credential | nothing; public data only (e.g. 中国法定节假日, AIHOT anonymous read) | lowest risk; your queries still reach the host |
+| API Key / Token | a key from the vendor console (e.g. 高德, 百度地图, 熔岩 Lava, 百智云浏览器) | the key can do everything its account can, and paid keys spend your balance; set a quota if the console allows |
+| OAuth 授权登录 | you log in on the vendor's own page and approve listed scopes (e.g. 滴答清单, 金数据, 墨刀, 天眼查) | read the scope list; revoke from the vendor's app settings when done |
+| 企业应用凭据 AppID / AppSecret | credentials of an app you register, often with 营业执照 (钉钉, 企业微信, 飞书 apps, 支付宝) | app permissions can cover a whole organization; grant only the scopes the tools need |
+| 云 AccessKey / SecretKey | cloud account keys (阿里云, 腾讯云, 火山引擎, 华为云) | never the main-account key; use a RAM / CAM sub-account limited to the one product |
+| 账号登录 / Cookie / 扫码 | your personal login session, captured by a community server (e.g. 小红书 servers that log in by QR code) | highest risk: full account access and a ban risk on the platform; prefer an official server, or use a secondary account |
+
+These are the usual patterns, not a per-entry audit; the vendor's own docs are the authority for what each token can do.
 
 ### Legend
 `🏢` official / first-party · `👥` community · `⭐` GitHub stars (approx, drift over time) · `🌐` hosted / docs link (not a repo)
@@ -72,7 +87,7 @@ The deepest official coverage in the whole ecosystem — Alibaba Cloud alone shi
 | 七牛云 Qiniu | 🏢 [`qiniu/qiniu-mcp-server`](https://github.com/qiniu/qiniu-mcp-server) ⭐39 | storage, upload, CDN |
 | 华为云 Huawei Cloud | 🏢 official remote MCP — endpoint issued per-account from your console ([dev portal](https://developer.huaweicloud.com/)) | BYO endpoint URL; hosts under `huaweicloud.com` / `myhuaweicloud.com` |
 | 腾讯云开发 CloudBase | 🏢 official remote MCP — `https://tcb-api.cloud.tencent.com/mcp/v1?env_id=<EnvId>` · 🏢 [`TencentCloudBase/CloudBase-AI-Toolkit`](https://github.com/TencentCloudBase/CloudBase-AI-Toolkit) ⭐1.1k | the backend most 微信小程序 run on: cloud database, functions, storage, hosting, logs. Auth is `X-TencentCloud-SecretId/SecretKey` headers or OAuth — use a sub-account key scoped to TCB only; the default toolset can mint credentials |
-| 百智云浏览器 Baizhi Cloud Browser (CapyBrowser) | 🏢 🌐 [official remote MCP](https://capybrowser.app.baizhi.cloud/docs/installation.md) | browser session and profile management; own API key required, browser runtime is billed; page control requires a separate compatible CDP client |
+| 百智云浏览器 Baizhi Cloud Browser (CapyBrowser, 长亭科技) | 🏢 official remote MCP — `https://capybrowser.app.baizhi.cloud/mcp` ([docs](https://capybrowser.app.baizhi.cloud/docs/installation.md)) | cloud browser sessions and saved profiles (存档); MCP/HTTP only manages runs, page control needs a separate CDP client (e.g. Playwright `connectOverCDP`). Bearer API key; billed while a browser is running, including idle and hand-off time. ⚠️ saved profiles keep your website logins on the vendor's cloud — use one profile per site and only for accounts you are willing to delegate |
 | 百度智能云 Mochow (向量库) | 🏢 [`baidu/mochow-mcp-server-python`](https://github.com/baidu/mochow-mcp-server-python) | vector database |
 
 ## 🗺️ 地图与出行 · Maps & Travel
@@ -181,6 +196,7 @@ The deepest official coverage in the whole ecosystem — Alibaba Cloud alone shi
 | Tushare | 👥 [`zlinzzzz/finData-mcp-server`](https://github.com/zlinzzzz/finData-mcp-server) ⭐57 · [`hanxuanliang/tsrs-mcp-server`](https://github.com/hanxuanliang/tsrs-mcp-server) ⭐27 | financial data |
 | 东方财富 / 同花顺 | 👥 [`noimank/FNewsCrawler`](https://github.com/noimank/FNewsCrawler) ⭐111 (archived) · [`27dream/mcp-eastmoney`](https://github.com/27dream/mcp-eastmoney) | quotes, news, fund flow |
 | 华尔街见闻 / 选股宝 | 🏢 official remote MCP — `https://xgb-mcp-api.xuangubao.cn/mcp` ([token page](https://wallstreetcn.com/org-mcp/token)) | 大涨股 sectors + reasons, global finance articles and full text (rolling ~2 months); no live quotes |
+| 熔岩 Lava (A股消息面热度) | 🏢 official remote MCP — `https://lava.ai-dolphin.com/subscribe/v1/mcp` ([docs](https://lava.ai-dolphin.com/subscribe/docs)) · [`dustinliang666-blip/lava-mcp`](https://github.com/dustinliang666-blip/lava-mcp) (Agent Skill) | news-flow heat for A股 stocks and concept boards: hot lists, first mentions, hourly windows, daily panels, institution/KOL coverage; read-only. Bearer `lvk_` key or OAuth; ¥100 starter voucher, then about ¥0.005 per call. No live quotes |
 | A股 Skill 集合 | 👥 [`shouldnotappearcalm/a-share-skill`](https://github.com/shouldnotappearcalm/a-share-skill) ⭐243 | quant, K-line, indicators — Agent Skills collection (not an MCP server) |
 
 > 💡 **券商 (brokerages):** 广发证券, 国泰君安, 中信 etc. have launched internal AI "Skills" (智能投顾 贝塔牛, 易淘金, GF-Quant…), but these are app-internal agent capabilities, **not public MCP servers** you can connect to. For programmatic A股 market data, use AKShare / Tushare / 东方财富 above. PR a row if/when any brokerage ships a public MCP.
