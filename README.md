@@ -172,7 +172,7 @@ The deepest official coverage in the whole ecosystem — Alibaba Cloud alone shi
 | 石墨文档 Shimo | 👥 [`kanyun-inc/rush-shimo-cli`](https://github.com/kanyun-inc/rush-shimo-cli) | read Shimo docs — CLI + SDK + MCP |
 | 企业微信 WeCom (群机器人) | 👥 [`gotoolkits/mcp-wecombot-server`](https://github.com/gotoolkits/mcp-wecombot-server) ⭐37 · [`loonghao/wecom-bot-mcp-server`](https://github.com/loonghao/wecom-bot-mcp-server) ⭐104 | send text/markdown/image/news to a WeCom group robot webhook · loonghao adds files/images; ⚠️ a failed send logs the full webhook URL (the secret), and image URLs are fetched from any host |
 | 企业微信 WeCom (API 连接器) | — still none · ops-bot: [`opsre/ZenOps`](https://github.com/opsre/ZenOps) ⭐165 | no server covers the WeCom app API (contacts, approvals, messages to members). ZenOps queries ops resources via 钉钉/飞书/企微 bots — not an API connector. PR one if you build it |
-| 教务宝 JWB | 🏢 official remote MCP — `https://card.jwbpro.com/open/jwb/mcp` ([guide](https://www.jwbpro.com/mcp/)) | 教培机构管理 SaaS：学员、班级、课表、合同、收款与经营报表，含 CRM 线索跟进等写操作；Streamable HTTP，OAuth 2.1 + PKCE 或机构 `jwb-sk-` 密钥；需机构持有有效「开放服务」订阅；⚠️ 写工具会修改真实业务数据 |
+| 教务宝 JWB | 🏢 official remote MCP — `https://card.jwbpro.com/open/jwb/mcp` ([guide](https://www.jwbpro.com/mcp/)) | education / training-institution SaaS: students, classes, timetables, contracts, payments, reports; OAuth 2.1 + PKCE or an institution `jwb-sk-` key (key needs an active subscription) — ⚠️ write tools such as CRM lead follow-up change real business data |
 
 ## 💻 开发工具 · DevTools
 
