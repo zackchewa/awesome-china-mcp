@@ -44,23 +44,10 @@ Configure an MCP-compatible client for the servers below — Claude Desktop, Cur
 
 > 🗓️ Full links, stars & archive survey: **2026-10-10** · selected catalog additions and official documentation checked **2026-11-03** · gap map last re-swept **2026-10-10**. The latest update is a documentation review, not an authenticated end-to-end test of every service.
 
-### 使用前要授权什么？· What will I be asked to authorize?
-
-Check the Notes column first; rows that need something unusual say so. Otherwise most entries fall into one of these:
-
-| 授权方式 Auth type | 你交出去的是什么 What you hand over | 建议 Advice |
-|---|---|---|
-| 无需凭证 No credential | nothing; public data only (e.g. 中国法定节假日, AIHOT anonymous read) | lowest risk; your queries still reach the host |
-| API Key / Token | a key from the vendor console (e.g. 高德, 百度地图, 熔岩 Lava, 百智云浏览器) | the key can do everything its account can, and paid keys spend your balance; set a quota if the console allows |
-| OAuth 授权登录 | you log in on the vendor's own page and approve listed scopes (e.g. 滴答清单, 金数据, 墨刀, 天眼查) | read the scope list; revoke from the vendor's app settings when done |
-| 企业应用凭据 AppID / AppSecret | credentials of an app you register, often with 营业执照 (钉钉, 企业微信, 飞书 apps, 支付宝) | app permissions can cover a whole organization; grant only the scopes the tools need |
-| 云 AccessKey / SecretKey | cloud account keys (阿里云, 腾讯云, 火山引擎, 华为云) | never the main-account key; use a RAM / CAM sub-account limited to the one product |
-| 账号登录 / Cookie / 扫码 | your personal login session, captured by a community server (e.g. 小红书 servers that log in by QR code) | highest risk: full account access and a ban risk on the platform; prefer an official server, or use a secondary account |
-
-These are the usual patterns, not a per-entry audit; the vendor's own docs are the authority for what each token can do.
-
 ### Legend
 `🏢` official / first-party · `👥` community · `⭐` GitHub stars (approx, drift over time) · `🌐` hosted / docs link (not a repo)
+
+`授权 Auth`: 🆓 无需 none · 🔑 API Key / Token · 🔐 OAuth 登录 · ☁️ 云 AccessKey · 🪪 AppID / Secret (开放平台应用) · 📱 扫码 / Cookie (personal login) — the vendor's docs are the authority for what each credential can do.
 
 ---
 
@@ -68,218 +55,218 @@ These are the usual patterns, not a per-entry audit; the vendor's own docs are t
 
 The deepest official coverage in the whole ecosystem — Alibaba Cloud alone ships 15+.
 
-| Service | Server | Notes |
-|---|---|---|
-| 阿里云 CloudOps | 🏢 [`aliyun/alibaba-cloud-ops-mcp-server`](https://github.com/aliyun/alibaba-cloud-ops-mcp-server) ⭐131 | ECS / 运维 operations |
-| 阿里云 Tablestore | 🏢 [`aliyun/alibabacloud-tablestore-mcp-server`](https://github.com/aliyun/alibabacloud-tablestore-mcp-server) ⭐157 | NoSQL / vector store |
-| 阿里云 可观测 Observability | 🏢 [`aliyun/alibabacloud-observability-mcp-server`](https://github.com/aliyun/alibabacloud-observability-mcp-server) ⭐166 | metrics, traces, logs |
-| 阿里云 云效 DevOps (Yunxiao) | 🏢 [`aliyun/alibabacloud-devops-mcp-server`](https://github.com/aliyun/alibabacloud-devops-mcp-server) ⭐175 | CI/CD, repos, work items |
-| 阿里云 容器服务 ACK | 🏢 [`aliyun/alibabacloud-ack-mcp-server`](https://github.com/aliyun/alibabacloud-ack-mcp-server) ⭐118 | Kubernetes ops |
-| 阿里云 RDS | 🏢 [`aliyun/alibabacloud-rds-openapi-mcp-server`](https://github.com/aliyun/alibabacloud-rds-openapi-mcp-server) ⭐54 | managed databases |
-| 阿里云 DMS (40+ data sources) | 🏢 [`aliyun/alibabacloud-dms-mcp-server`](https://github.com/aliyun/alibabacloud-dms-mcp-server) ⭐54 | universal data access |
-| 阿里云 DataWorks | 🏢 [`aliyun/alibabacloud-dataworks-mcp-server`](https://github.com/aliyun/alibabacloud-dataworks-mcp-server) ⭐52 | data dev / governance |
-| 阿里云 (full OpenAPI) | 🏢 [`aliyun/alibabacloud-api-mcp-server`](https://github.com/aliyun/alibabacloud-api-mcp-server) ⭐35 | all Alibaba Cloud APIs |
-| 阿里云 Hologres / ADB / PolarDB / OpenSearch / ESA | 🏢 [hologres](https://github.com/aliyun/alibabacloud-hologres-mcp-server) · [adb-mysql](https://github.com/aliyun/alibabacloud-adb-mysql-mcp-server) · [polardb](https://github.com/aliyun/alibabacloud-polardb-mcp-server) · [opensearch](https://github.com/aliyun/alibabacloud-opensearch-mcp-server) · [esa](https://github.com/aliyun/mcp-server-esa) | per-product servers |
-| 腾讯云 COS | 🏢 [`Tencent/cos-mcp`](https://github.com/Tencent/cos-mcp) ⭐38 | object storage + 数据万象 CI |
-| 腾讯云 CLS 日志 | 🏢 [`Tencent/cls-mcp-server`](https://github.com/Tencent/cls-mcp-server) | log service |
-| 火山引擎 Volcengine | 🏢 [`volcengine/mcp-server`](https://github.com/volcengine/mcp-server) ⭐328 | multi-product (TOS, ECS, …) |
-| 火山引擎 VOD / ImageX | 🏢 [`volcengine/mcp-vod`](https://github.com/volcengine/mcp-vod) · [`volcengine/mcp-imagex`](https://github.com/volcengine/mcp-imagex) | video / image services |
-| 七牛云 Qiniu | 🏢 [`qiniu/qiniu-mcp-server`](https://github.com/qiniu/qiniu-mcp-server) ⭐39 | storage, upload, CDN |
-| 华为云 Huawei Cloud | 🏢 official remote MCP — endpoint issued per-account from your console ([dev portal](https://developer.huaweicloud.com/)) | BYO endpoint URL; hosts under `huaweicloud.com` / `myhuaweicloud.com` |
-| 腾讯云开发 CloudBase | 🏢 official remote MCP — `https://tcb-api.cloud.tencent.com/mcp/v1?env_id=<EnvId>` · 🏢 [`TencentCloudBase/CloudBase-AI-Toolkit`](https://github.com/TencentCloudBase/CloudBase-AI-Toolkit) ⭐1.1k | the backend most 微信小程序 run on: cloud database, functions, storage, hosting, logs. Auth is `X-TencentCloud-SecretId/SecretKey` headers or OAuth — use a sub-account key scoped to TCB only; the default toolset can mint credentials |
-| 百智云浏览器 Baizhi Cloud Browser (CapyBrowser, 长亭科技) | 🏢 official remote MCP — `https://capybrowser.app.baizhi.cloud/mcp` ([docs](https://capybrowser.app.baizhi.cloud/docs/installation.md)) | cloud browser sessions and saved profiles (存档); MCP/HTTP only manages runs, page control needs a separate CDP client (e.g. Playwright `connectOverCDP`). Bearer API key; billed while a browser is running, including idle and hand-off time. ⚠️ saved profiles keep your website logins on the vendor's cloud — use one profile per site and only for accounts you are willing to delegate |
-| 百度智能云 Mochow (向量库) | 🏢 [`baidu/mochow-mcp-server-python`](https://github.com/baidu/mochow-mcp-server-python) | vector database |
+| Service | Server | 授权 Auth | Notes |
+|---|---|---|---|
+| 阿里云 CloudOps | 🏢 [`aliyun/alibaba-cloud-ops-mcp-server`](https://github.com/aliyun/alibaba-cloud-ops-mcp-server) ⭐131 | ☁️ AccessKey | ECS / 运维 operations |
+| 阿里云 Tablestore | 🏢 [`aliyun/alibabacloud-tablestore-mcp-server`](https://github.com/aliyun/alibabacloud-tablestore-mcp-server) ⭐157 | ☁️ AccessKey | NoSQL / vector store |
+| 阿里云 可观测 Observability | 🏢 [`aliyun/alibabacloud-observability-mcp-server`](https://github.com/aliyun/alibabacloud-observability-mcp-server) ⭐166 | ☁️ AccessKey | metrics, traces, logs |
+| 阿里云 云效 DevOps (Yunxiao) | 🏢 [`aliyun/alibabacloud-devops-mcp-server`](https://github.com/aliyun/alibabacloud-devops-mcp-server) ⭐175 | 🔑 Token | CI/CD, repos, work items |
+| 阿里云 容器服务 ACK | 🏢 [`aliyun/alibabacloud-ack-mcp-server`](https://github.com/aliyun/alibabacloud-ack-mcp-server) ⭐118 | ☁️ AccessKey | Kubernetes ops |
+| 阿里云 RDS | 🏢 [`aliyun/alibabacloud-rds-openapi-mcp-server`](https://github.com/aliyun/alibabacloud-rds-openapi-mcp-server) ⭐54 | ☁️ AccessKey | managed databases |
+| 阿里云 DMS (40+ data sources) | 🏢 [`aliyun/alibabacloud-dms-mcp-server`](https://github.com/aliyun/alibabacloud-dms-mcp-server) ⭐54 | ☁️ AccessKey | universal data access |
+| 阿里云 DataWorks | 🏢 [`aliyun/alibabacloud-dataworks-mcp-server`](https://github.com/aliyun/alibabacloud-dataworks-mcp-server) ⭐52 | ☁️ AccessKey | data dev / governance |
+| 阿里云 (full OpenAPI) | 🏢 [`aliyun/alibabacloud-api-mcp-server`](https://github.com/aliyun/alibabacloud-api-mcp-server) ⭐35 | 🔐 OAuth · ☁️ AccessKey | all Alibaba Cloud APIs |
+| 阿里云 Hologres / ADB / PolarDB / OpenSearch / ESA | 🏢 [hologres](https://github.com/aliyun/alibabacloud-hologres-mcp-server) · [adb-mysql](https://github.com/aliyun/alibabacloud-adb-mysql-mcp-server) · [polardb](https://github.com/aliyun/alibabacloud-polardb-mcp-server) · [opensearch](https://github.com/aliyun/alibabacloud-opensearch-mcp-server) · [esa](https://github.com/aliyun/mcp-server-esa) | ☁️ AccessKey · 🔑 DB 密码 | per-product servers |
+| 腾讯云 COS | 🏢 [`Tencent/cos-mcp`](https://github.com/Tencent/cos-mcp) ⭐38 | ☁️ SecretId / Key | object storage + 数据万象 CI |
+| 腾讯云 CLS 日志 | 🏢 [`Tencent/cls-mcp-server`](https://github.com/Tencent/cls-mcp-server) | ☁️ SecretId / Key | log service |
+| 火山引擎 Volcengine | 🏢 [`volcengine/mcp-server`](https://github.com/volcengine/mcp-server) ⭐328 | ☁️ AccessKey | multi-product (TOS, ECS, …) |
+| 火山引擎 VOD / ImageX | 🏢 [`volcengine/mcp-vod`](https://github.com/volcengine/mcp-vod) · [`volcengine/mcp-imagex`](https://github.com/volcengine/mcp-imagex) | ☁️ AccessKey | video / image services |
+| 七牛云 Qiniu | 🏢 [`qiniu/qiniu-mcp-server`](https://github.com/qiniu/qiniu-mcp-server) ⭐39 | ☁️ AccessKey | storage, upload, CDN |
+| 华为云 Huawei Cloud | 🏢 official remote MCP — endpoint issued per-account from your console ([dev portal](https://developer.huaweicloud.com/)) | ☁️ AccessKey | BYO endpoint URL; hosts under `huaweicloud.com` / `myhuaweicloud.com` |
+| 腾讯云开发 CloudBase | 🏢 official remote MCP — `https://tcb-api.cloud.tencent.com/mcp/v1?env_id=<EnvId>` · 🏢 [`TencentCloudBase/CloudBase-AI-Toolkit`](https://github.com/TencentCloudBase/CloudBase-AI-Toolkit) ⭐1.1k | ☁️ SecretId / Key · 🔐 OAuth | the backend most 微信小程序 run on: cloud database, functions, storage, hosting, logs. Auth is `X-TencentCloud-SecretId/SecretKey` headers or OAuth — use a sub-account key scoped to TCB only; the default toolset can mint credentials |
+| 百智云浏览器 Baizhi Cloud Browser (CapyBrowser, 长亭科技) | 🏢 official remote MCP — `https://capybrowser.app.baizhi.cloud/mcp` ([docs](https://capybrowser.app.baizhi.cloud/docs/installation.md)) | 🔑 API Key | cloud browser sessions and saved profiles (存档); MCP/HTTP only manages runs, page control needs a separate CDP client (e.g. Playwright `connectOverCDP`). Bearer API key; billed while a browser is running, including idle and hand-off time. ⚠️ saved profiles keep your website logins on the vendor's cloud — use one profile per site and only for accounts you are willing to delegate |
+| 百度智能云 Mochow (向量库) | 🏢 [`baidu/mochow-mcp-server-python`](https://github.com/baidu/mochow-mcp-server-python) | 🔑 API Key | vector database |
 
 ## 🗺️ 地图与出行 · Maps & Travel
 
-| App | Server | Notes |
-|---|---|---|
-| 高德地图 Amap | 🏢 [official MCP](https://lbs.amap.com/api/mcp-server/gettingstarted) · 👥 [`sugarforever/amap-mcp-server`](https://github.com/sugarforever/amap-mcp-server) ⭐131 | geocode, routing, POI, weather; free tier |
-| 百度地图 Baidu Maps | 🏢 [`baidu-maps/mcp`](https://github.com/baidu-maps/mcp) ⭐447 | location, routing, weather, place search |
-| 腾讯地图 Tencent Maps | 🏢 [official MCP](https://lbs.qq.com/service/MCPServer/MCPServerGuide/overview) — `https://mcp.map.qq.com/mcp?key=<KEY>` | geocode, POI, routing, weather; remote MCP, key from [console](https://lbs.qq.com/dev/console/application/mine) |
-| 滴滴出行 DiDi | 🏢 official remote MCP — `https://mcp.didichuxing.com/mcp-servers?key=<KEY>` ([portal](https://mcp.didichuxing.com/)) | hail a ride: fare estimate, place order, trip status, cancel + maps; sandbox endpoint `…/mcp-servers-sandbox` |
-| 飞常准 Variflight | 🏢 [`variflight/variflight-mcp`](https://github.com/variflight/variflight-mcp) ⭐33 · [`variflight/tripmatch-mcp`](https://github.com/variflight/tripmatch-mcp) | real-time flight info |
-| 12306 火车票 | 👥 [`Joooook/12306-mcp`](https://github.com/Joooook/12306-mcp) ⭐2.3k · [`drfccv/mcp-server-12306`](https://github.com/drfccv/mcp-server-12306) ⭐406 | train ticket search |
-| 携程 Ctrip | 👥 [`bianwuqiong/ctrip-hotel-skill`](https://github.com/bianwuqiong/ctrip-hotel-skill) | hotel price — Agent Skill via Playwright (not a native MCP server) |
-| 途牛旅游 Tuniu | 🏢 official remote MCP — `https://openapi.tuniu.cn/mcp/hotel` · `…/mcp/flight` ([开放平台](https://open.tuniu.com/mcp/login)) · 🏢 [`tuniucorp/tuniu-cli`](https://github.com/tuniucorp/tuniu-cli) ⭐9 | hotels, domestic flights, tickets, trains, cruises; auth is an `apiKey` request header, not `Authorization: Bearer` |
-| 美团 Meituan | 👥 [`LewisChen1219/Meituan-Mcp-Server-WIP`](https://github.com/LewisChen1219/Meituan-Mcp-Server-WIP) | food ordering (WIP) |
+| App | Server | 授权 Auth | Notes |
+|---|---|---|---|
+| 高德地图 Amap | 🏢 [official MCP](https://lbs.amap.com/api/mcp-server/gettingstarted) · 👥 [`sugarforever/amap-mcp-server`](https://github.com/sugarforever/amap-mcp-server) ⭐131 | 🔑 API Key | geocode, routing, POI, weather; free tier |
+| 百度地图 Baidu Maps | 🏢 [`baidu-maps/mcp`](https://github.com/baidu-maps/mcp) ⭐447 | 🔑 API Key | location, routing, weather, place search |
+| 腾讯地图 Tencent Maps | 🏢 [official MCP](https://lbs.qq.com/service/MCPServer/MCPServerGuide/overview) — `https://mcp.map.qq.com/mcp?key=<KEY>` | 🔑 API Key | geocode, POI, routing, weather; remote MCP, key from [console](https://lbs.qq.com/dev/console/application/mine) |
+| 滴滴出行 DiDi | 🏢 official remote MCP — `https://mcp.didichuxing.com/mcp-servers?key=<KEY>` ([portal](https://mcp.didichuxing.com/)) | 🔑 API Key | hail a ride: fare estimate, place order, trip status, cancel + maps; sandbox endpoint `…/mcp-servers-sandbox` |
+| 飞常准 Variflight | 🏢 [`variflight/variflight-mcp`](https://github.com/variflight/variflight-mcp) ⭐33 · [`variflight/tripmatch-mcp`](https://github.com/variflight/tripmatch-mcp) | 🔑 API Key · 🔐 OAuth | real-time flight info |
+| 12306 火车票 | 👥 [`Joooook/12306-mcp`](https://github.com/Joooook/12306-mcp) ⭐2.3k · [`drfccv/mcp-server-12306`](https://github.com/drfccv/mcp-server-12306) ⭐406 | 🆓 无需 | train ticket search |
+| 携程 Ctrip | 👥 [`bianwuqiong/ctrip-hotel-skill`](https://github.com/bianwuqiong/ctrip-hotel-skill) | 📱 扫码登录 | hotel price — Agent Skill via Playwright (not a native MCP server) |
+| 途牛旅游 Tuniu | 🏢 official remote MCP — `https://openapi.tuniu.cn/mcp/hotel` · `…/mcp/flight` ([开放平台](https://open.tuniu.com/mcp/login)) · 🏢 [`tuniucorp/tuniu-cli`](https://github.com/tuniucorp/tuniu-cli) ⭐9 | 🔑 API Key | hotels, domestic flights, tickets, trains, cruises; auth is an `apiKey` request header, not `Authorization: Bearer` |
+| 美团 Meituan | 👥 [`LewisChen1219/Meituan-Mcp-Server-WIP`](https://github.com/LewisChen1219/Meituan-Mcp-Server-WIP) | 📱 登录态 session | food ordering (WIP) |
 
 ## 💳 支付 · Payments
 
-| App | Server | Notes |
-|---|---|---|
-| 支付宝 Alipay+ (global) | 🏢 [`alipay/global-alipayplus-mcp`](https://github.com/alipay/global-alipayplus-mcp) | Alipay+ global payment APIs |
-| 支付宝 (国内, 托管) | 🌐 [百炼 MCP 市场](https://bailian.console.aliyun.com/?tab=mcp) | hosted-only, first-launch on 百炼 |
+| App | Server | 授权 Auth | Notes |
+|---|---|---|---|
+| 支付宝 Alipay+ (global) | 🏢 [`alipay/global-alipayplus-mcp`](https://github.com/alipay/global-alipayplus-mcp) | 🪪 商户 ID / 私钥 | Alipay+ global payment APIs |
+| 支付宝 (国内, 托管) | 🌐 [百炼 MCP 市场](https://bailian.console.aliyun.com/?tab=mcp) | 🌐 在百炼开通 | hosted-only, first-launch on 百炼 |
 
 ## 📱 内容与社交 · Content & Social
 
-| App | Server | Notes |
-|---|---|---|
-| 小红书 Xiaohongshu | 👥 [`xpzouying/xiaohongshu-mcp`](https://github.com/xpzouying/xiaohongshu-mcp) ⭐16.2k · [`iFurySt/RedNote-MCP`](https://github.com/iFurySt/RedNote-MCP) ⭐1.1k · [`aki66938/xhs-toolkit`](https://github.com/aki66938/xhs-toolkit) ⭐1.4k | read / search / publish |
-| 微信公众号 (发布) | 👥 [`caol64/wenyan-mcp`](https://github.com/caol64/wenyan-mcp) ⭐1.3k | auto-format & publish Markdown |
-| 微信公众号 (下载) | 👥 [`qiye45/wechatDownload`](https://github.com/qiye45/wechatDownload) ⭐9.7k | batch article download — tool with MCP/Skill support |
-| 微信公众号 (AI 阅读) | 👥 [ReadGZH](https://github.com/sweesama/readgzh) · [接入文档](https://readgzh.site/docs) | hosted remote MCP: public article URL → Markdown; search cached articles only; limited anonymous access, optional API key; ⚠️ every article read is cached and publicly listed on readgzh.site |
-| 微信读书 WeRead | 👥 [`freestylefly/mcp-server-weread`](https://github.com/freestylefly/mcp-server-weread) ⭐579 | books, notes, highlights |
-| Bilibili | 👥 [`huccihuang/bilibili-mcp-server`](https://github.com/huccihuang/bilibili-mcp-server) ⭐190 · [`34892002/bilibili-mcp-js`](https://github.com/34892002/bilibili-mcp-js) ⭐194 | search, video info |
-| 知乎 Zhihu | 👥 [`meurz/zhihu-mcp-server`](https://github.com/meurz/zhihu-mcp-server) (API, archived) · [`Douyh123/zhihu-mcp`](https://github.com/Douyh123/zhihu-mcp) (search/publish) · [`JasonJarvan/Zhihu-Collections-MCP`](https://github.com/JasonJarvan/Zhihu-Collections-MCP) ⭐182 (export) | API access, search, publish, export |
-| 微博 Weibo | 👥 [`qinyuanpei/mcp-server-weibo`](https://github.com/qinyuanpei/mcp-server-weibo) ⭐63 | user / content / hot-search |
-| 抖音 Douyin (发布) | 👥 [`lancelin111/douyin-mcp-server`](https://github.com/lancelin111/douyin-mcp-server) ⭐35 | automated video upload |
-| 抖音 / B站 / 公众号 / 播客 (采集) | 👥 [`chubbyguan/chubbyskills`](https://github.com/chubbyguan/chubbyskills) ⭐1.2k | content-ingestion Agent Skills + a knowledge-base MCP (not per-app servers) |
-| AIHOT（中文 AI 资讯） | 🏢 🌐 [官方 MCP 文档](https://aihot.news/agent?tab=mcp) · source [`KKKKhazix/AIHOT`](https://github.com/KKKKhazix/AIHOT) ⭐7.1k | hosted Streamable HTTP — `https://aihot.news/api/mcp`; anonymous read-only topic search, hot events, daily / weekly / monthly briefs |
+| App | Server | 授权 Auth | Notes |
+|---|---|---|---|
+| 小红书 Xiaohongshu | 👥 [`xpzouying/xiaohongshu-mcp`](https://github.com/xpzouying/xiaohongshu-mcp) ⭐16.2k · [`iFurySt/RedNote-MCP`](https://github.com/iFurySt/RedNote-MCP) ⭐1.1k · [`aki66938/xhs-toolkit`](https://github.com/aki66938/xhs-toolkit) ⭐1.4k | 📱 扫码登录 | read / search / publish |
+| 微信公众号 (发布) | 👥 [`caol64/wenyan-mcp`](https://github.com/caol64/wenyan-mcp) ⭐1.3k | 🪪 AppID / Secret | auto-format & publish Markdown |
+| 微信公众号 (下载) | 👥 [`qiye45/wechatDownload`](https://github.com/qiye45/wechatDownload) ⭐9.7k | 📱 微信登录态 | batch article download — tool with MCP/Skill support |
+| 微信公众号 (AI 阅读) | 👥 [ReadGZH](https://github.com/sweesama/readgzh) · [接入文档](https://readgzh.site/docs) | 🔑 API Key · 🔐 OAuth | hosted remote MCP: public article URL → Markdown; search cached articles only; limited anonymous access, optional API key; ⚠️ every article read is cached and publicly listed on readgzh.site |
+| 微信读书 WeRead | 👥 [`freestylefly/mcp-server-weread`](https://github.com/freestylefly/mcp-server-weread) ⭐579 | 📱 Cookie | books, notes, highlights |
+| Bilibili | 👥 [`huccihuang/bilibili-mcp-server`](https://github.com/huccihuang/bilibili-mcp-server) ⭐190 · [`34892002/bilibili-mcp-js`](https://github.com/34892002/bilibili-mcp-js) ⭐194 | 🆓 无需 | search, video info |
+| 知乎 Zhihu | 👥 [`meurz/zhihu-mcp-server`](https://github.com/meurz/zhihu-mcp-server) (API, archived) · [`Douyh123/zhihu-mcp`](https://github.com/Douyh123/zhihu-mcp) (search/publish) · [`JasonJarvan/Zhihu-Collections-MCP`](https://github.com/JasonJarvan/Zhihu-Collections-MCP) ⭐182 (export) | 📱 Cookie · 扫码登录 | API access, search, publish, export |
+| 微博 Weibo | 👥 [`qinyuanpei/mcp-server-weibo`](https://github.com/qinyuanpei/mcp-server-weibo) ⭐63 | 🆓 无需 · 📱 可选扫码 | user / content / hot-search |
+| 抖音 Douyin (发布) | 👥 [`lancelin111/douyin-mcp-server`](https://github.com/lancelin111/douyin-mcp-server) ⭐35 | 📱 扫码登录 | automated video upload |
+| 抖音 / B站 / 公众号 / 播客 (采集) | 👥 [`chubbyguan/chubbyskills`](https://github.com/chubbyguan/chubbyskills) ⭐1.2k | 🆓 无需 · 📱 可选 Cookie | content-ingestion Agent Skills + a knowledge-base MCP (not per-app servers) |
+| AIHOT（中文 AI 资讯） | 🏢 🌐 [官方 MCP 文档](https://aihot.news/agent?tab=mcp) · source [`KKKKhazix/AIHOT`](https://github.com/KKKKhazix/AIHOT) ⭐7.1k | 🆓 无需 | hosted Streamable HTTP — `https://aihot.news/api/mcp`; anonymous read-only topic search, hot events, daily / weekly / monthly briefs |
 
 ## 🛒 电商 · E-commerce
 
-| App | Server | Notes |
-|---|---|---|
-| 淘宝 / 闲鱼 | 👥 [`Tsinglung-Tseng/ali-mcp`](https://github.com/Tsinglung-Tseng/ali-mcp) | Taobao + Xianyu automation |
-| 京东 JD | 👥 [`mako202605/mcp-jd-super-deals`](https://github.com/mako202605/mcp-jd-super-deals) · [`mako202605/mcp-jd-seckill`](https://github.com/mako202605/mcp-jd-seckill) | deals, seckill |
-| 1688 | 👥 [`QuoVadis86/ai-reverse`](https://github.com/QuoVadis86/ai-reverse) ⭐24 | product / image search |
+| App | Server | 授权 Auth | Notes |
+|---|---|---|---|
+| 淘宝 / 闲鱼 | 👥 [`Tsinglung-Tseng/ali-mcp`](https://github.com/Tsinglung-Tseng/ali-mcp) | 📱 扫码登录 | Taobao + Xianyu automation |
+| 京东 JD | 👥 [`mako202605/mcp-jd-super-deals`](https://github.com/mako202605/mcp-jd-super-deals) · [`mako202605/mcp-jd-seckill`](https://github.com/mako202605/mcp-jd-seckill) | 🆓 无需 | deals, seckill |
+| 1688 | 👥 [`QuoVadis86/ai-reverse`](https://github.com/QuoVadis86/ai-reverse) ⭐24 | 📱 Cookie | product / image search |
 
 ## 🍜 生活服务 · Local Life
 
-| App | Server | Notes |
-|---|---|---|
-| 瑞幸咖啡 Luckin | 🏢 official remote MCP — `https://gwmcp.lkcoffee.com/order/user/mcp` ([open platform](https://open.lkcoffee.com/)) | find nearby stores, browse products, place a coffee order |
-| 麦当劳 McDonald's China | 🏢 official remote MCP — `https://mcp.mcd.cn` ([授权 auth](https://open.mcd.cn/mcp/auth)) · 🏢 [`M-China/mcd-mcp-server`](https://github.com/M-China/mcd-mcp-server) ⭐192 | nutrition lookup, nearby stores, menu; Bearer token from the auth endpoint |
-| 滴滴出行 DiDi | see 地图与出行 · Maps & Travel above | ride-hailing via official MCP |
+| App | Server | 授权 Auth | Notes |
+|---|---|---|---|
+| 瑞幸咖啡 Luckin | 🏢 official remote MCP — `https://gwmcp.lkcoffee.com/order/user/mcp` ([open platform](https://open.lkcoffee.com/)) | 🔑 Token | find nearby stores, browse products, place a coffee order |
+| 麦当劳 McDonald's China | 🏢 official remote MCP — `https://mcp.mcd.cn` ([授权 auth](https://open.mcd.cn/mcp/auth)) · 🏢 [`M-China/mcd-mcp-server`](https://github.com/M-China/mcd-mcp-server) ⭐192 | 🔑 Token | nutrition lookup, nearby stores, menu; Bearer token from the auth endpoint |
+| 滴滴出行 DiDi | see 地图与出行 · Maps & Travel above | 🔑 API Key | ride-hailing via official MCP |
 
 ## 🏢 办公协作 · Office & Collaboration
 
-| App | Server | Notes |
-|---|---|---|
-| MinerU 文档解析 | 🏢 [`opendatalab/MinerU-Ecosystem/mcp`](https://github.com/opendatalab/MinerU-Ecosystem/tree/main/mcp) | PDF, Office and image parsing to Markdown; stdio / Streamable HTTP; documents go to MinerU cloud, with anonymous Flash mode or own API token |
-| 滴答清单 Dida | 🏢 [official MCP guide](https://help.dida365.com/articles/7438132116019216384) — `https://mcp.dida365.com` | Tasks, lists, habits and focus records; Streamable HTTP, OAuth or API token; includes write operations |
-| 飞书项目 Feishu Project | 🏢 [official MCP connection guide](https://project.feishu.cn/b/helpcenter/1ykiuvvj/wzb3ycsc) | Project/work-item queries and updates; enable MCP access in the product; HTTP OAuth, `X-Mcp-Token` or stdio setup; capabilities depend on edition and permissions |
-| Doc2X 文档解析 | 🏢 [`NoEdgeAI/doc2x-mcp`](https://github.com/NoEdgeAI/doc2x-mcp) | PDF/image parsing, formula/table extraction, document export & layout JSON; MIT stdio server, own API key required, cloud API usage billed |
-| 飞书 / Lark | 🏢 [`larksuite/lark-openapi-mcp`](https://github.com/larksuite/lark-openapi-mcp) ⭐838 · 👥 [`ztxtxwd/open-feishu-mcp-server`](https://github.com/ztxtxwd/open-feishu-mcp-server) ⭐87 | docs, sheets, IM, calendar |
-| 语雀 Yuque | 🏢 [`yuque/yuque-mcp-server`](https://github.com/yuque/yuque-mcp-server) ⭐248 (server) · [`yuque/yuque-ecosystem`](https://github.com/yuque/yuque-ecosystem) ⭐230 (server+skills+plugin bundle) · 👥 [`yehuoshun/yuque-ai-mcp`](https://github.com/yehuoshun/yuque-ai-mcp) ⭐7 (62 tools; 17 need a browser session cookie) | knowledge base CRUD, search, boards, statistics, recycle |
-| 钉钉 DingTalk | 👥 [`hykfft/mcp-dingtalk-doc`](https://github.com/hykfft/mcp-dingtalk-doc) ⭐56 (docs) · [`keithyt06/quick-dingtalk-mcp`](https://github.com/keithyt06/quick-dingtalk-mcp) ⭐8 (user identity, wraps the official `dws` CLI) · [`Shawyeok/mcp-dingding-bot`](https://github.com/Shawyeok/mcp-dingding-bot) ⭐12 (群机器人) | docs, personal identity, group robot |
-| 腾讯文档 Tencent Docs | 🏢 official remote MCP — `https://docs.qq.com/openapi/mcp` ([auth docs](https://docs.qq.com/open/auth/mcp.html)) | read/write docs, sheets, slides |
-| 腾讯会议 Tencent Meeting | 🏢 official remote MCP — `https://mcp.meeting.tencent.com/mcp/wemeet-open/v1` ([docs](https://meeting.tencent.com/ai-skill.html)) | schedule meetings, participants, recordings, transcripts |
-| WPS 365 / 金山文档 | 🏢 official remote MCP — `https://openapi.wps.cn/mcp/v2/kso-yundoc/message` ([guide](https://open.wps.cn/documents/app-integration-dev/mcp-server/use-guide)) | enterprise cloud docs: search, read, share, permissions |
-| 简道云 JianDaoYun | 🏢 [official personal MCP](https://hc.jiandaoyun.com/open/25090) | apps, forms, data, todos — read-only |
-| MasterGo | 🏢 [`mastergo-design/mastergo-magic-mcp`](https://github.com/mastergo-design/mastergo-magic-mcp) ⭐286 | design-to-code: read MasterGo board structure, styles and specs |
-| 腾讯乐享 Lexiang | 🏢 official remote MCP — `https://mcp.lexiang-app.com/mcp?company_from=<企业标识>` ([token page](https://lexiangla.com/mcp)) · 🏢 [`tencent-lexiang/lexiang-mcp-skill`](https://github.com/tencent-lexiang/lexiang-mcp-skill) | enterprise knowledge base: search, semantic snippets, browse folders; `lxmcp_` token per company |
-| 腾讯微云 Weiyun | 🏢 official remote MCP — `https://www.weiyun.com/api/v3/mcpserver` ([token page](https://www.weiyun.com/act/openclaw)) | personal cloud drive: list, create folders, rename — Bearer token scoped to the folders you authorise |
-| 氚云 H3 Yun | 🏢 official remote MCP — `https://www.h3yun.com/v1/agent/mcp` ([docs](https://help.h3yun.com/280976225/)) | low-code apps: apps, forms, schemas, records, todos; personal access token inherits your company role, public cloud only |
-| 墨刀 Modao | 🏢 official remote MCP — `https://modao.cc/agent-py/ai/mcp` ([docs](https://modao.cc/feature/ai-mcp.html)) | generate prototypes, React apps and PRDs; OAuth or personal-space token, calls spend your 墨刀 AI quota |
-| Pixso | 🏢 official remote MCP — `https://pixso.cn/mcp` ([docs](https://pixso.cn/developer/zh/mcp/remote-mcp.html)) · stdio proxy `@pixso/pixso-stdio-mcp` | design-to-code: layer DSL, variants, design variables, styles (read-only); personal access token in a `Token` header |
-| 金数据 Jinshuju | 🏢 official remote MCP — `https://jinshuju.net/mcp` (OAuth; [docs](https://open.jinshuju.net/mcp/)) | forms and entries — ⚠️ tools can create, edit and delete forms and entries |
-| 百度网盘 Baidu Netdisk | 🏢 [`baidu-netdisk/mcp`](https://github.com/baidu-netdisk/mcp) ⭐137 | list, search, upload, share — ⚠️ the README puts `access_token` in the SSE URL, and upload reads any file the process can read |
-| 印象笔记 Yinxiang | 👥 [`yinxiang-team/YXBJ-MCP`](https://github.com/yinxiang-team/YXBJ-MCP) ⭐15 | search / read / create notes via Developer Token; we could not confirm the org is first-party, and it logs note contents |
-| flomo 浮墨 | 👥 [`chatmcp/mcp-server-flomo`](https://github.com/chatmcp/mcp-server-flomo) ⭐58 | write notes to flomo (write-only); set `FLOMO_API_URL` yourself — in hosted REST mode an unset URL is taken from the request |
-| wolai 我来 | 👥 [`LittlePeter52012/wolai-mcp`](https://github.com/LittlePeter52012/wolai-mcp) ⭐9 | read / write a wolai knowledge base |
-| 石墨文档 Shimo | 👥 [`kanyun-inc/rush-shimo-cli`](https://github.com/kanyun-inc/rush-shimo-cli) | read Shimo docs — CLI + SDK + MCP |
-| 企业微信 WeCom (群机器人) | 👥 [`gotoolkits/mcp-wecombot-server`](https://github.com/gotoolkits/mcp-wecombot-server) ⭐37 · [`loonghao/wecom-bot-mcp-server`](https://github.com/loonghao/wecom-bot-mcp-server) ⭐104 | send text/markdown/image/news to a WeCom group robot webhook · loonghao adds files/images; ⚠️ a failed send logs the full webhook URL (the secret), and image URLs are fetched from any host |
-| 企业微信 WeCom (API 连接器) | — still none · ops-bot: [`opsre/ZenOps`](https://github.com/opsre/ZenOps) ⭐165 | no server covers the WeCom app API (contacts, approvals, messages to members). ZenOps queries ops resources via 钉钉/飞书/企微 bots — not an API connector. PR one if you build it |
-| 教务宝 JWB | 🏢 official remote MCP — `https://card.jwbpro.com/open/jwb/mcp` ([guide](https://www.jwbpro.com/mcp/)) | education / training-institution SaaS: students, classes, timetables, contracts, payments, reports; OAuth 2.1 + PKCE or an institution `jwb-sk-` key (key needs an active subscription) — ⚠️ write tools such as CRM lead follow-up change real business data |
+| App | Server | 授权 Auth | Notes |
+|---|---|---|---|
+| MinerU 文档解析 | 🏢 [`opendatalab/MinerU-Ecosystem/mcp`](https://github.com/opendatalab/MinerU-Ecosystem/tree/main/mcp) | 🆓 无需 · 🔑 API Key | PDF, Office and image parsing to Markdown; stdio / Streamable HTTP; documents go to MinerU cloud, with anonymous Flash mode or own API token |
+| 滴答清单 Dida | 🏢 [official MCP guide](https://help.dida365.com/articles/7438132116019216384) — `https://mcp.dida365.com` | 🔐 OAuth · 🔑 Token | Tasks, lists, habits and focus records; Streamable HTTP, OAuth or API token; includes write operations |
+| 飞书项目 Feishu Project | 🏢 [official MCP connection guide](https://project.feishu.cn/b/helpcenter/1ykiuvvj/wzb3ycsc) | 🔐 OAuth · 🔑 Token | Project/work-item queries and updates; enable MCP access in the product; HTTP OAuth, `X-Mcp-Token` or stdio setup; capabilities depend on edition and permissions |
+| Doc2X 文档解析 | 🏢 [`NoEdgeAI/doc2x-mcp`](https://github.com/NoEdgeAI/doc2x-mcp) | 🔑 API Key | PDF/image parsing, formula/table extraction, document export & layout JSON; MIT stdio server, own API key required, cloud API usage billed |
+| 飞书 / Lark | 🏢 [`larksuite/lark-openapi-mcp`](https://github.com/larksuite/lark-openapi-mcp) ⭐838 · 👥 [`ztxtxwd/open-feishu-mcp-server`](https://github.com/ztxtxwd/open-feishu-mcp-server) ⭐87 | 🪪 AppID / Secret · 🔐 OAuth | docs, sheets, IM, calendar |
+| 语雀 Yuque | 🏢 [`yuque/yuque-mcp-server`](https://github.com/yuque/yuque-mcp-server) ⭐248 (server) · [`yuque/yuque-ecosystem`](https://github.com/yuque/yuque-ecosystem) ⭐230 (server+skills+plugin bundle) · 👥 [`yehuoshun/yuque-ai-mcp`](https://github.com/yehuoshun/yuque-ai-mcp) ⭐7 (62 tools; 17 need a browser session cookie) | 🔑 Token / 📱 Cookie | knowledge base CRUD, search, boards, statistics, recycle |
+| 钉钉 DingTalk | 👥 [`hykfft/mcp-dingtalk-doc`](https://github.com/hykfft/mcp-dingtalk-doc) ⭐56 (docs) · [`keithyt06/quick-dingtalk-mcp`](https://github.com/keithyt06/quick-dingtalk-mcp) ⭐8 (user identity, wraps the official `dws` CLI) · [`Shawyeok/mcp-dingding-bot`](https://github.com/Shawyeok/mcp-dingding-bot) ⭐12 (群机器人) | 📱 Cookie / 🔐 OAuth / 🔑 Token | docs, personal identity, group robot |
+| 腾讯文档 Tencent Docs | 🏢 official remote MCP — `https://docs.qq.com/openapi/mcp` ([auth docs](https://docs.qq.com/open/auth/mcp.html)) | 🔑 Token | read/write docs, sheets, slides |
+| 腾讯会议 Tencent Meeting | 🏢 official remote MCP — `https://mcp.meeting.tencent.com/mcp/wemeet-open/v1` ([docs](https://meeting.tencent.com/ai-skill.html)) | 🔑 Token | schedule meetings, participants, recordings, transcripts |
+| WPS 365 / 金山文档 | 🏢 official remote MCP — `https://openapi.wps.cn/mcp/v2/kso-yundoc/message` ([guide](https://open.wps.cn/documents/app-integration-dev/mcp-server/use-guide)) | 🔐 OAuth | enterprise cloud docs: search, read, share, permissions |
+| 简道云 JianDaoYun | 🏢 [official personal MCP](https://hc.jiandaoyun.com/open/25090) | 🔑 个人授权链接 | apps, forms, data, todos — read-only |
+| MasterGo | 🏢 [`mastergo-design/mastergo-magic-mcp`](https://github.com/mastergo-design/mastergo-magic-mcp) ⭐286 | 🔑 Token | design-to-code: read MasterGo board structure, styles and specs |
+| 腾讯乐享 Lexiang | 🏢 official remote MCP — `https://mcp.lexiang-app.com/mcp?company_from=<企业标识>` ([token page](https://lexiangla.com/mcp)) · 🏢 [`tencent-lexiang/lexiang-mcp-skill`](https://github.com/tencent-lexiang/lexiang-mcp-skill) | 🔑 Token | enterprise knowledge base: search, semantic snippets, browse folders; `lxmcp_` token per company |
+| 腾讯微云 Weiyun | 🏢 official remote MCP — `https://www.weiyun.com/api/v3/mcpserver` ([token page](https://www.weiyun.com/act/openclaw)) | 🔑 Token | personal cloud drive: list, create folders, rename — Bearer token scoped to the folders you authorise |
+| 氚云 H3 Yun | 🏢 official remote MCP — `https://www.h3yun.com/v1/agent/mcp` ([docs](https://help.h3yun.com/280976225/)) | 🔑 Token | low-code apps: apps, forms, schemas, records, todos; personal access token inherits your company role, public cloud only |
+| 墨刀 Modao | 🏢 official remote MCP — `https://modao.cc/agent-py/ai/mcp` ([docs](https://modao.cc/feature/ai-mcp.html)) | 🔐 OAuth · 🔑 Token | generate prototypes, React apps and PRDs; OAuth or personal-space token, calls spend your 墨刀 AI quota |
+| Pixso | 🏢 official remote MCP — `https://pixso.cn/mcp` ([docs](https://pixso.cn/developer/zh/mcp/remote-mcp.html)) · stdio proxy `@pixso/pixso-stdio-mcp` | 🔑 Token | design-to-code: layer DSL, variants, design variables, styles (read-only); personal access token in a `Token` header |
+| 金数据 Jinshuju | 🏢 official remote MCP — `https://jinshuju.net/mcp` (OAuth; [docs](https://open.jinshuju.net/mcp/)) | 🔐 OAuth | forms and entries — ⚠️ tools can create, edit and delete forms and entries |
+| 百度网盘 Baidu Netdisk | 🏢 [`baidu-netdisk/mcp`](https://github.com/baidu-netdisk/mcp) ⭐137 | 🔐 OAuth · 🔑 Token | list, search, upload, share — ⚠️ the README puts `access_token` in the SSE URL, and upload reads any file the process can read |
+| 印象笔记 Yinxiang | 👥 [`yinxiang-team/YXBJ-MCP`](https://github.com/yinxiang-team/YXBJ-MCP) ⭐15 | 🔑 Token | search / read / create notes via Developer Token; we could not confirm the org is first-party, and it logs note contents |
+| flomo 浮墨 | 👥 [`chatmcp/mcp-server-flomo`](https://github.com/chatmcp/mcp-server-flomo) ⭐58 | 🔑 Webhook URL | write notes to flomo (write-only); set `FLOMO_API_URL` yourself — in hosted REST mode an unset URL is taken from the request |
+| wolai 我来 | 👥 [`LittlePeter52012/wolai-mcp`](https://github.com/LittlePeter52012/wolai-mcp) ⭐9 | 🪪 AppID / Secret | read / write a wolai knowledge base |
+| 石墨文档 Shimo | 👥 [`kanyun-inc/rush-shimo-cli`](https://github.com/kanyun-inc/rush-shimo-cli) | 🔑 Token | read Shimo docs — CLI + SDK + MCP |
+| 企业微信 WeCom (群机器人) | 👥 [`gotoolkits/mcp-wecombot-server`](https://github.com/gotoolkits/mcp-wecombot-server) ⭐37 · [`loonghao/wecom-bot-mcp-server`](https://github.com/loonghao/wecom-bot-mcp-server) ⭐104 | 🔑 Webhook Key | send text/markdown/image/news to a WeCom group robot webhook · loonghao adds files/images; ⚠️ a failed send logs the full webhook URL (the secret), and image URLs are fetched from any host |
+| 企业微信 WeCom (API 连接器) | — still none · ops-bot: [`opsre/ZenOps`](https://github.com/opsre/ZenOps) ⭐165 | — | no server covers the WeCom app API (contacts, approvals, messages to members). ZenOps queries ops resources via 钉钉/飞书/企微 bots — not an API connector. PR one if you build it |
+| 教务宝 JWB | 🏢 official remote MCP — `https://card.jwbpro.com/open/jwb/mcp` ([guide](https://www.jwbpro.com/mcp/)) | 🔐 OAuth · 🔑 API Key | education / training-institution SaaS: students, classes, timetables, contracts, payments, reports; OAuth 2.1 + PKCE or an institution `jwb-sk-` key (key needs an active subscription) — ⚠️ write tools such as CRM lead follow-up change real business data |
 
 ## 💻 开发工具 · DevTools
 
-| App | Server | Notes |
-|---|---|---|
-| Sealos | 🏢 [official MCP guide](https://sealos.io/docs/AI/mcp/) | Regional Streamable HTTP services for DevBox, databases, billing and observability; workspace KubeConfig authentication; infrastructure operations may write or incur costs |
-| Gitee | 🏢 [`oschina/mcp-gitee`](https://github.com/oschina/mcp-gitee) ⭐66 | repos, issues, PRs |
-| Apifox | 🏢 [official MCP](https://docs.apifox.com/apifox-mcp-server) | API specs into agents |
-| GitCode | 👥 [`Trenza1ore/GitCode-API`](https://github.com/Trenza1ore/GitCode-API) ⭐7 | GitCode REST SDK + CLI shipping MCP / agent tool definitions |
-| TAPD | [`tapd_mcp/mcp-server-tapd`](https://cnb.cool/tapd_mcp/mcp-server-tapd) (cnb.cool, PyPI `mcp-server-tapd`) | stories, bugs, tasks, iterations, comments; Tencent-hosted but published by an individual, so untagged — ⚠️ the optional HTTP mode binds `0.0.0.0` with no auth, and upload tools read any absolute path; no LICENSE |
-| 融云 RongCloud | 🏢 [`rongcloud/rongcloud-server-mcp-python`](https://github.com/rongcloud/rongcloud-server-mcp-python) ⭐1 | IM server API: users, groups, messages — ⚠️ issues user tokens and dismisses groups without confirmation; no push since 2025-06 |
-| 百度 AI Guard | 🏢 [`baidu/mcp-server-baidu-ai-guard`](https://github.com/baidu/mcp-server-baidu-ai-guard) | content moderation |
-| HarmonyOS | 👥 [`XixianLiang/HarmonyOS-mcp-server`](https://github.com/XixianLiang/HarmonyOS-mcp-server) | HarmonyOS dev/test |
-| LeetCode | 👥 [`jinzcdev/leetcode-mcp-server`](https://github.com/jinzcdev/leetcode-mcp-server) | problems, submissions |
+| App | Server | 授权 Auth | Notes |
+|---|---|---|---|
+| Sealos | 🏢 [official MCP guide](https://sealos.io/docs/AI/mcp/) | 🔑 KubeConfig | Regional Streamable HTTP services for DevBox, databases, billing and observability; workspace KubeConfig authentication; infrastructure operations may write or incur costs |
+| Gitee | 🏢 [`oschina/mcp-gitee`](https://github.com/oschina/mcp-gitee) ⭐66 | 🔑 Token | repos, issues, PRs |
+| Apifox | 🏢 [official MCP](https://docs.apifox.com/apifox-mcp-server) | 🔑 Token | API specs into agents |
+| GitCode | 👥 [`Trenza1ore/GitCode-API`](https://github.com/Trenza1ore/GitCode-API) ⭐7 | 🔑 Token | GitCode REST SDK + CLI shipping MCP / agent tool definitions |
+| TAPD | [`tapd_mcp/mcp-server-tapd`](https://cnb.cool/tapd_mcp/mcp-server-tapd) (cnb.cool, PyPI `mcp-server-tapd`) | 🔑 Token | stories, bugs, tasks, iterations, comments; Tencent-hosted but published by an individual, so untagged — ⚠️ the optional HTTP mode binds `0.0.0.0` with no auth, and upload tools read any absolute path; no LICENSE |
+| 融云 RongCloud | 🏢 [`rongcloud/rongcloud-server-mcp-python`](https://github.com/rongcloud/rongcloud-server-mcp-python) ⭐1 | 🪪 AppKey / Secret | IM server API: users, groups, messages — ⚠️ issues user tokens and dismisses groups without confirmation; no push since 2025-06 |
+| 百度 AI Guard | 🏢 [`baidu/mcp-server-baidu-ai-guard`](https://github.com/baidu/mcp-server-baidu-ai-guard) | ☁️ AccessKey | content moderation |
+| HarmonyOS | 👥 [`XixianLiang/HarmonyOS-mcp-server`](https://github.com/XixianLiang/HarmonyOS-mcp-server) | 🆓 无需 | HarmonyOS dev/test |
+| LeetCode | 👥 [`jinzcdev/leetcode-mcp-server`](https://github.com/jinzcdev/leetcode-mcp-server) | 🆓 无需 · 📱 可选 Cookie | problems, submissions |
 
 ## 📈 金融与数据 · Finance & Data (A股)
 
-| App | Server | Notes |
-|---|---|---|
-| FinanceMCP (综合) | 👥 [`guangxiangdebizi/FinanceMCP`](https://github.com/guangxiangdebizi/FinanceMCP) ⭐858 | Tushare + Binance — A股/macro/crypto, real-time |
-| AKShare | 👥 [`aahl/mcp-aktools`](https://github.com/aahl/mcp-aktools) ⭐390 · [`zwldarren/akshare-one-mcp`](https://github.com/zwldarren/akshare-one-mcp) ⭐233 | stocks, crypto, analysis |
-| Tushare | 👥 [`zlinzzzz/finData-mcp-server`](https://github.com/zlinzzzz/finData-mcp-server) ⭐57 · [`hanxuanliang/tsrs-mcp-server`](https://github.com/hanxuanliang/tsrs-mcp-server) ⭐27 | financial data |
-| 东方财富 / 同花顺 | 👥 [`noimank/FNewsCrawler`](https://github.com/noimank/FNewsCrawler) ⭐111 (archived) · [`27dream/mcp-eastmoney`](https://github.com/27dream/mcp-eastmoney) | quotes, news, fund flow |
-| 华尔街见闻 / 选股宝 | 🏢 official remote MCP — `https://xgb-mcp-api.xuangubao.cn/mcp` ([token page](https://wallstreetcn.com/org-mcp/token)) | 大涨股 sectors + reasons, global finance articles and full text (rolling ~2 months); no live quotes |
-| 熔岩 Lava (A股消息面热度) | 🏢 official remote MCP — `https://lava.ai-dolphin.com/subscribe/v1/mcp` ([docs](https://lava.ai-dolphin.com/subscribe/docs)) · [`dustinliang666-blip/lava-mcp`](https://github.com/dustinliang666-blip/lava-mcp) (Agent Skill) | news-flow heat for A股 stocks and concept boards: hot lists, first mentions, hourly windows, daily panels, institution/KOL coverage; read-only. Bearer `lvk_` key or OAuth; ¥100 starter voucher, then about ¥0.005 per call. No live quotes |
-| A股 Skill 集合 | 👥 [`shouldnotappearcalm/a-share-skill`](https://github.com/shouldnotappearcalm/a-share-skill) ⭐243 | quant, K-line, indicators — Agent Skills collection (not an MCP server) |
+| App | Server | 授权 Auth | Notes |
+|---|---|---|---|
+| FinanceMCP (综合) | 👥 [`guangxiangdebizi/FinanceMCP`](https://github.com/guangxiangdebizi/FinanceMCP) ⭐858 | 🔑 Token · 🔑 可选 Key | Tushare + Binance — A股/macro/crypto, real-time |
+| AKShare | 👥 [`aahl/mcp-aktools`](https://github.com/aahl/mcp-aktools) ⭐390 · [`zwldarren/akshare-one-mcp`](https://github.com/zwldarren/akshare-one-mcp) ⭐233 | 🆓 无需 | stocks, crypto, analysis |
+| Tushare | 👥 [`zlinzzzz/finData-mcp-server`](https://github.com/zlinzzzz/finData-mcp-server) ⭐57 · [`hanxuanliang/tsrs-mcp-server`](https://github.com/hanxuanliang/tsrs-mcp-server) ⭐27 | 🔑 Token | financial data |
+| 东方财富 / 同花顺 | 👥 [`noimank/FNewsCrawler`](https://github.com/noimank/FNewsCrawler) ⭐111 (archived) · [`27dream/mcp-eastmoney`](https://github.com/27dream/mcp-eastmoney) | 📱 扫码登录 / 🆓 无需 | quotes, news, fund flow |
+| 华尔街见闻 / 选股宝 | 🏢 official remote MCP — `https://xgb-mcp-api.xuangubao.cn/mcp` ([token page](https://wallstreetcn.com/org-mcp/token)) | 🔑 Token | 大涨股 sectors + reasons, global finance articles and full text (rolling ~2 months); no live quotes |
+| 熔岩 Lava (A股消息面热度) | 🏢 official remote MCP — `https://lava.ai-dolphin.com/subscribe/v1/mcp` ([docs](https://lava.ai-dolphin.com/subscribe/docs)) · [`dustinliang666-blip/lava-mcp`](https://github.com/dustinliang666-blip/lava-mcp) (Agent Skill) | 🔑 API Key · 🔐 OAuth | news-flow heat for A股 stocks and concept boards: hot lists, first mentions, hourly windows, daily panels, institution/KOL coverage; read-only. Bearer `lvk_` key or OAuth; ¥100 starter voucher, then about ¥0.005 per call. No live quotes |
+| A股 Skill 集合 | 👥 [`shouldnotappearcalm/a-share-skill`](https://github.com/shouldnotappearcalm/a-share-skill) ⭐243 | 🆓 无需 | quant, K-line, indicators — Agent Skills collection (not an MCP server) |
 
 > 💡 **券商 (brokerages):** 广发证券, 国泰君安, 中信 etc. have launched internal AI "Skills" (智能投顾 贝塔牛, 易淘金, GF-Quant…), but these are app-internal agent capabilities, **not public MCP servers** you can connect to. For programmatic A股 market data, use AKShare / Tushare / 东方财富 above. PR a row if/when any brokerage ships a public MCP.
 
 ## ⚖️ 法律 · Legal (China)
 
-| Domain | Server | Notes |
-|---|---|---|
-| 中国法律法规 | 👥 [`Yuhamixli/Law-Crawler-RPA-RAG-MCP`](https://github.com/Yuhamixli/Law-Crawler-RPA-RAG-MCP) ⭐32 | crawl 中国法律法规 + RAG Q&A |
-| 华宇元典 Yuandian | 🏢 official remote MCP ×5 — `https://open.chineselaw.com/mcp/{law,case,company,securities,hallucination}/stream` ([config](https://open.chineselaw.com/mcp-config)) | statutes, cases, company and securities law, plus a legal hallucination check; OAuth |
-| 法规检索 / 案例 | 👥 [`moyupeng0422/legal-tools`](https://github.com/moyupeng0422/legal-tools) ⭐32 | Chinese-law MCP + Skills: statutes, cases |
+| Domain | Server | 授权 Auth | Notes |
+|---|---|---|---|
+| 中国法律法规 | 👥 [`Yuhamixli/Law-Crawler-RPA-RAG-MCP`](https://github.com/Yuhamixli/Law-Crawler-RPA-RAG-MCP) ⭐32 | 🆓 无需 | crawl 中国法律法规 + RAG Q&A |
+| 华宇元典 Yuandian | 🏢 official remote MCP ×5 — `https://open.chineselaw.com/mcp/{law,case,company,securities,hallucination}/stream` ([config](https://open.chineselaw.com/mcp-config)) | 🔐 OAuth | statutes, cases, company and securities law, plus a legal hallucination check; OAuth |
+| 法规检索 / 案例 | 👥 [`moyupeng0422/legal-tools`](https://github.com/moyupeng0422/legal-tools) ⭐32 | 🆓 无需 / 🔑 Token | Chinese-law MCP + Skills: statutes, cases |
 
 ## 📚 学术 · Academic & Research
 
-| Source | Server | Notes |
-|---|---|---|
-| 多源论文 (arXiv/PubMed/…) | 👥 [`openags/paper-search-mcp`](https://github.com/openags/paper-search-mcp) ⭐2.8k · [nodejs](https://github.com/Dianel555/paper-search-mcp-nodejs) ⭐186 | search + download academic papers |
-| 智慧芽 PatSnap | 🏢 official remote MCP (beta) — `https://connect.zhihuiya.com/2b0355/logic-mcp` ([API keys](https://open.zhihuiya.com/dashboard/api-keys)) | patent + paper search and detail fetch; Bearer API key, billed against your account quota |
-| 知网 CNKI | 👥 [`xxxxchaos/cnki-mcp-server`](https://github.com/xxxxchaos/cnki-mcp-server) | Chinese academic search |
-| AMiner | 👥 [`huanghuoguoguo/aminer-mcp`](https://github.com/huanghuoguoguo/aminer-mcp) | scholars, papers, patents (free tier) |
+| Source | Server | 授权 Auth | Notes |
+|---|---|---|---|
+| 多源论文 (arXiv/PubMed/…) | 👥 [`openags/paper-search-mcp`](https://github.com/openags/paper-search-mcp) ⭐2.8k · [nodejs](https://github.com/Dianel555/paper-search-mcp-nodejs) ⭐186 | 🆓 无需 · 🔑 可选 Key | search + download academic papers |
+| 智慧芽 PatSnap | 🏢 official remote MCP (beta) — `https://connect.zhihuiya.com/2b0355/logic-mcp` ([API keys](https://open.zhihuiya.com/dashboard/api-keys)) | 🔑 API Key | patent + paper search and detail fetch; Bearer API key, billed against your account quota |
+| 知网 CNKI | 👥 [`xxxxchaos/cnki-mcp-server`](https://github.com/xxxxchaos/cnki-mcp-server) | 🆓 无需 | Chinese academic search |
+| AMiner | 👥 [`huanghuoguoguo/aminer-mcp`](https://github.com/huanghuoguoguo/aminer-mcp) | 🔑 Token | scholars, papers, patents (free tier) |
 
 ## 🌦️ 天气 · Weather
 
-| App | Server | Notes |
-|---|---|---|
-| 彩云天气 Caiyun | 👥 [`caiyunapp/mcp-caiyun-weather`](https://github.com/caiyunapp/mcp-caiyun-weather) | minute-level forecast |
-| 心知天气 Seniverse | 👥 [`sugarforever/mcp-seniverse-weather`](https://github.com/sugarforever/mcp-seniverse-weather) | city weather |
-| 高德 / 百度天气 | (via Amap / Baidu Map tools, see Maps) | city weather |
+| App | Server | 授权 Auth | Notes |
+|---|---|---|---|
+| 彩云天气 Caiyun | 👥 [`caiyunapp/mcp-caiyun-weather`](https://github.com/caiyunapp/mcp-caiyun-weather) | 🔑 API Key | minute-level forecast |
+| 心知天气 Seniverse | 👥 [`sugarforever/mcp-seniverse-weather`](https://github.com/sugarforever/mcp-seniverse-weather) | 🔑 API Key | city weather |
+| 高德 / 百度天气 | (via Amap / Baidu Map tools, see Maps) | 🔑 API Key | city weather |
 
 ## 🎵 音乐 · Music
 
-| App | Server | Notes |
-|---|---|---|
-| 网易云 / QQ音乐 / 酷狗 / 酷我 | 👥 [`ELDment/Meting-Agent`](https://github.com/ELDment/Meting-Agent) ⭐112 | multi-platform music API proxy for AI |
-| 网易云音乐 NetEase | 👥 [`Cheiineeey/netease-music-mcp`](https://github.com/Cheiineeey/netease-music-mcp) ⭐114 | play, lyrics sync, playlist mgmt |
+| App | Server | 授权 Auth | Notes |
+|---|---|---|---|
+| 网易云 / QQ音乐 / 酷狗 / 酷我 | 👥 [`ELDment/Meting-Agent`](https://github.com/ELDment/Meting-Agent) ⭐112 | 🆓 无需 | multi-platform music API proxy for AI |
+| 网易云音乐 NetEase | 👥 [`Cheiineeey/netease-music-mcp`](https://github.com/Cheiineeey/netease-music-mcp) ⭐114 | 📱 Cookie | play, lyrics sync, playlist mgmt |
 
 ## 🏠 智能家居 / IoT · Smart Home
 
-| App | Server | Notes |
-|---|---|---|
-| 小米 米家 Mijia | 👥 [`handsomejustin/mijia-control`](https://github.com/handsomejustin/mijia-control) ⭐73 | 米家 × MCP × HomeKit smart-home bridge |
+| App | Server | 授权 Auth | Notes |
+|---|---|---|---|
+| 小米 米家 Mijia | 👥 [`handsomejustin/mijia-control`](https://github.com/handsomejustin/mijia-control) ⭐73 | 📱 扫码登录 | 米家 × MCP × HomeKit smart-home bridge |
 
 ## 🤖 大模型与 AI 服务 · LLM & AI Services
 
-| Provider | Server | Notes |
-|---|---|---|
-| LifeVerse | 🏢 official remote MCP — `https://lifeverse.gufreelancer.com/api/mcp` ([guide](https://lifeverse.gufreelancer.com/mcp)) · 🏢 [`lifeversegu/lifeverse-mcp`](https://github.com/lifeversegu/lifeverse-mcp) | discover, search and recommend 11 public LifeVerse AI products; Streamable HTTP, anonymous, read-only |
-| MiniMax | 🏢 [`MiniMax-AI/MiniMax-MCP`](https://github.com/MiniMax-AI/MiniMax-MCP) ⭐1.6k · [JS](https://github.com/MiniMax-AI/MiniMax-MCP-JS) ⭐130 | TTS, voice clone, image & video gen |
-| 魔搭 ModelScope | 🏢 [`modelscope/modelscope-mcp-server`](https://github.com/modelscope/modelscope-mcp-server) · 🌐 [MCP 广场 1400+](https://modelscope.cn/brand/view/MCP) | models + biggest CN MCP hub |
-| 智谱 Zhipu (GLM) | 🏢 official remote MCP ×3 — `https://open.bigmodel.cn/api/mcp/{web_search_prime,web_reader,zread}/mcp` ([docs](https://docs.bigmodel.cn/cn/coding-plan/mcp/search-mcp-server); needs a GLM Coding Plan key) · 👥 [`wnzzer/zhipu-tools-coding-plan`](https://github.com/wnzzer/zhipu-tools-coding-plan) · [`NanguangChou/zhipu_image_mcp`](https://github.com/NanguangChou/zhipu_image_mcp) | web search, page reader, Zread (read any GitHub repo's docs, tree and files), image gen |
-| 通义千问 Qwen | 👥 [`zk-b612/mcp-qwen-omni`](https://github.com/zk-b612/mcp-qwen-omni) | multimodal (image/audio/voice) |
-| 可灵 AI Kling (快手) | 👥 [`199-mcp/mcp-kling`](https://github.com/199-mcp/mcp-kling) ⭐43 · 🌐 [official API docs](https://klingai.com/document-api/apiReference/commonInfo) | text-to-video / text-to-image; the vendor ships a REST API only — the MCP layer is community |
-| LibTV 哩布哩布 | 🏢 [`libtv-labs/libtv-skills`](https://github.com/libtv-labs/libtv-skills) | image / video gen, inpainting, short drama — official Agent Skill, not an MCP server |
-| Flova | 🏢 [official Skill on ClawHub](https://clawhub.ai/flova/skills/flova-video-generator) | script → storyboard → footage → export video agent; official Agent Skill, not an MCP server |
-| Meshy | 🏢 [`meshy-dev/meshy-mcp-server`](https://github.com/meshy-dev/meshy-mcp-server) · [official guide](https://docs.meshy.ai/en/api/ai) | Text/image-to-3D, texturing, rigging and task queries; own Meshy API key; generation consumes credits |
-| Tripo3D | 🏢 [`Tripo-Developer/tripo-mcp`](https://github.com/Tripo-Developer/tripo-mcp) · [official guide](https://www.tripo3d.ai/blog/cursor-tripo-mcp-tutorial) | Alpha MCP for generating 3D assets and importing them into Blender; requires Blender, Tripo add-on and API key; API credits apply |
-| Hyper3D / Rodin | 🏢 [official remote MCP](https://hyper3d.ai/features/mcp) — `https://api.hyper3d.com/api/mcp` | 3D generation, progress queries and result links; browser authorization selects the billing workspace; plan, credits and permissions apply |
-| Mureka | 🏢 [`SkyworkAI/Mureka-mcp`](https://github.com/SkyworkAI/Mureka-mcp) | Lyrics, songs and instrumental music; own API key and credits; upstream setup targets international `api.mureka.ai`, while Launch's API connection uses the China service |
-| DeepSeek / Moonshot Kimi | model providers (OpenAI-compatible) — add via your client's model config | — |
+| Provider | Server | 授权 Auth | Notes |
+|---|---|---|---|
+| LifeVerse | 🏢 official remote MCP — `https://lifeverse.gufreelancer.com/api/mcp` ([guide](https://lifeverse.gufreelancer.com/mcp)) · 🏢 [`lifeversegu/lifeverse-mcp`](https://github.com/lifeversegu/lifeverse-mcp) | 🆓 无需 | discover, search and recommend 11 public LifeVerse AI products; Streamable HTTP, anonymous, read-only |
+| MiniMax | 🏢 [`MiniMax-AI/MiniMax-MCP`](https://github.com/MiniMax-AI/MiniMax-MCP) ⭐1.6k · [JS](https://github.com/MiniMax-AI/MiniMax-MCP-JS) ⭐130 | 🔑 API Key | TTS, voice clone, image & video gen |
+| 魔搭 ModelScope | 🏢 [`modelscope/modelscope-mcp-server`](https://github.com/modelscope/modelscope-mcp-server) · 🌐 [MCP 广场 1400+](https://modelscope.cn/brand/view/MCP) | 🔑 Token | models + biggest CN MCP hub |
+| 智谱 Zhipu (GLM) | 🏢 official remote MCP ×3 — `https://open.bigmodel.cn/api/mcp/{web_search_prime,web_reader,zread}/mcp` ([docs](https://docs.bigmodel.cn/cn/coding-plan/mcp/search-mcp-server); needs a GLM Coding Plan key) · 👥 [`wnzzer/zhipu-tools-coding-plan`](https://github.com/wnzzer/zhipu-tools-coding-plan) · [`NanguangChou/zhipu_image_mcp`](https://github.com/NanguangChou/zhipu_image_mcp) | 🔑 API Key | web search, page reader, Zread (read any GitHub repo's docs, tree and files), image gen |
+| 通义千问 Qwen | 👥 [`zk-b612/mcp-qwen-omni`](https://github.com/zk-b612/mcp-qwen-omni) | 🔑 API Key | multimodal (image/audio/voice) |
+| 可灵 AI Kling (快手) | 👥 [`199-mcp/mcp-kling`](https://github.com/199-mcp/mcp-kling) ⭐43 · 🌐 [official API docs](https://klingai.com/document-api/apiReference/commonInfo) | 🔑 Access / Secret Key | text-to-video / text-to-image; the vendor ships a REST API only — the MCP layer is community |
+| LibTV 哩布哩布 | 🏢 [`libtv-labs/libtv-skills`](https://github.com/libtv-labs/libtv-skills) | 🔑 Access Key | image / video gen, inpainting, short drama — official Agent Skill, not an MCP server |
+| Flova | 🏢 [official Skill on ClawHub](https://clawhub.ai/flova/skills/flova-video-generator) | 🔑 API Key | script → storyboard → footage → export video agent; official Agent Skill, not an MCP server |
+| Meshy | 🏢 [`meshy-dev/meshy-mcp-server`](https://github.com/meshy-dev/meshy-mcp-server) · [official guide](https://docs.meshy.ai/en/api/ai) | 🔑 API Key | Text/image-to-3D, texturing, rigging and task queries; own Meshy API key; generation consumes credits |
+| Tripo3D | 🏢 [`Tripo-Developer/tripo-mcp`](https://github.com/Tripo-Developer/tripo-mcp) · [official guide](https://www.tripo3d.ai/blog/cursor-tripo-mcp-tutorial) | 🔑 API Key | Alpha MCP for generating 3D assets and importing them into Blender; requires Blender, Tripo add-on and API key; API credits apply |
+| Hyper3D / Rodin | 🏢 [official remote MCP](https://hyper3d.ai/features/mcp) — `https://api.hyper3d.com/api/mcp` | 🔐 OAuth | 3D generation, progress queries and result links; browser authorization selects the billing workspace; plan, credits and permissions apply |
+| Mureka | 🏢 [`SkyworkAI/Mureka-mcp`](https://github.com/SkyworkAI/Mureka-mcp) | 🔑 API Key | Lyrics, songs and instrumental music; own API key and credits; upstream setup targets international `api.mureka.ai`, while Launch's API connection uses the China service |
+| DeepSeek / Moonshot Kimi | model providers (OpenAI-compatible) — add via your client's model config | 🔑 API Key | — |
 
 ## 🧰 实用工具 · Utilities
 
-| Tool | Server | Notes |
-|---|---|---|
-| AntV 图表 | 🏢 [`antvis/mcp-server-chart`](https://github.com/antvis/mcp-server-chart) | Chart generation; stdio / SSE / Streamable HTTP; default public renderer needs no key and receives chart data; private renderer configurable |
-| 秘塔AI搜索 Metaso | 🏢 [official API portal](https://metaso.cn/search-api/playground) · [MCP guide](https://www.modelscope.cn/mcp/servers/metasota/metaso-search) — `https://metaso.cn/api/mcp` | Multi-source search, webpage reading and RAG Q&A; remote HTTP MCP; own Bearer API key and quota |
-| 中国数据核验 | 👥 [`CCCpan/Gebaini`](https://github.com/CCCpan/Gebaini) ⭐165 | ID / 企业 / 车辆 / OCR / risk |
-| 工商企业大数据 | 👥 [`handaas/mcp-server`](https://github.com/handaas/mcp-server) ⭐12 · [`handaas/enterprise-mcp-server`](https://github.com/handaas/enterprise-mcp-server) | 工商信息 / 风险 / 股权 / 知识产权 (旷湖) |
-| 企查查 Qichacha | 🏢 official remote MCP ×10 — `https://agent.qcc.com/mcp/{company,risk,ipr,operation,history,executive,regulation,case,tender,document}/stream` ([guide](https://agent.qcc.com/guide)) | 工商 / 风险 / 知识产权 / 司法 / 招投标; Bearer API key or OAuth, billed per call |
-| 天眼查 Tianyancha | 🏢 official remote MCP — `https://mcp.tianyancha.com/mcp` · 🏢 [`tyc-tech/tyc-cli`](https://github.com/tyc-tech/tyc-cli) ⭐19 (CLI client for it) | 工商 / 股东 / 风险 / 诉讼; OAuth |
-| 快递100 Kuaidi100 | 🏢 [`kuaidi100-api/kuaidi100-MCP`](https://github.com/kuaidi100-api/kuaidi100-MCP) ⭐14 | parcel tracking across carriers (read-only); enterprise API account — ⚠️ the key travels in the query string and can surface in error messages |
-| PushPlus 推送加 | 🏢 [`pushplus/pushplus-MCP-Server-TypeScript`](https://github.com/pushplus/pushplus-MCP-Server-TypeScript) ⭐3 | push to 微信 / email / app — ⚠️ also exposes account tools (AccessKey, token minting, points) with no confirmation; give the agent only what it needs |
-| 小牛翻译 NiuTrans | 🏢 [`NiuTrans/MCP-TextTranslation`](https://github.com/NiuTrans/MCP-TextTranslation) ⭐8 | text translation, 380+ languages |
-| 快递 / 工商 / 发票 / 三要素 | 👥 [`FLYKID/THMCP`](https://github.com/FLYKID/THMCP) ⭐7 | 瞳虎 — logistics, biz-reg, invoice, ID verify |
-| 中国法定节假日 / 调休 | 👥 [`zackchewa/china-mcp-servers`](https://github.com/zackchewa/china-mcp-servers) | 某天是否放假/调休上班 + 整年假期表；零配置无需凭证 — ⚠️ repo archived, unmaintained |
-| Server酱 (微信推送) | 👥 [`zackchewa/china-mcp-servers`](https://github.com/zackchewa/china-mcp-servers) | 主动推送通知到你自己的微信；SendKey 免费自助 — ⚠️ repo archived, unmaintained |
-| 百度翻译 | 👥 [`zackchewa/china-mcp-servers`](https://github.com/zackchewa/china-mcp-servers) | 多语种文本翻译（标准版免费额度） — ⚠️ repo archived, unmaintained |
-| 腾讯 Web 搜索 | 🏢 [`Tencent/WebSearchMCP`](https://github.com/Tencent/WebSearchMCP) | web search |
-| 博查 AI 搜索 Bocha | 🏢 [`BochaAI/bocha-search-mcp`](https://github.com/BochaAI/bocha-search-mcp) ⭐185 | Chinese web search — pages, news, images; the practical way to give a CN agent fresh sources |
-| TextIn 合合信息 (IntSig) | 🏢 [`intsig-textin/textin-mcp`](https://github.com/intsig-textin/textin-mcp) ⭐29 | document parsing: PDF / image → Markdown, preserving headings, tables and layout |
-| 多平台通知推送 | 👥 [`aahl/mcp-notify`](https://github.com/aahl/mcp-notify) ⭐28 | one server pushes to Bark / 微信 / 钉钉 / 飞书 / Telegram |
-| Everything2MCP 本地/私网协议聚合 | 👥 [`shcdwz1234/Everything2MCP`](https://github.com/shcdwz1234/Everything2MCP) | OpenAPI/gRPC/MQTT/queues; hot-reload; business writes disabled by default; experimental, limited 飞书/钉钉/企业微信 adapters; `npx everything2mcp` |
+| Tool | Server | 授权 Auth | Notes |
+|---|---|---|---|
+| AntV 图表 | 🏢 [`antvis/mcp-server-chart`](https://github.com/antvis/mcp-server-chart) | 🆓 无需 · 🔑 可选 Key | Chart generation; stdio / SSE / Streamable HTTP; default public renderer needs no key and receives chart data; private renderer configurable |
+| 秘塔AI搜索 Metaso | 🏢 [official API portal](https://metaso.cn/search-api/playground) · [MCP guide](https://www.modelscope.cn/mcp/servers/metasota/metaso-search) — `https://metaso.cn/api/mcp` | 🔑 API Key | Multi-source search, webpage reading and RAG Q&A; remote HTTP MCP; own Bearer API key and quota |
+| 中国数据核验 | 👥 [`CCCpan/Gebaini`](https://github.com/CCCpan/Gebaini) ⭐165 | 🆓 无需 | ID / 企业 / 车辆 / OCR / risk |
+| 工商企业大数据 | 👥 [`handaas/mcp-server`](https://github.com/handaas/mcp-server) ⭐12 · [`handaas/enterprise-mcp-server`](https://github.com/handaas/enterprise-mcp-server) | 🔑 SecretId / Key · Token | 工商信息 / 风险 / 股权 / 知识产权 (旷湖) |
+| 企查查 Qichacha | 🏢 official remote MCP ×10 — `https://agent.qcc.com/mcp/{company,risk,ipr,operation,history,executive,regulation,case,tender,document}/stream` ([guide](https://agent.qcc.com/guide)) | 🔑 API Key · 🔐 OAuth | 工商 / 风险 / 知识产权 / 司法 / 招投标; Bearer API key or OAuth, billed per call |
+| 天眼查 Tianyancha | 🏢 official remote MCP — `https://mcp.tianyancha.com/mcp` · 🏢 [`tyc-tech/tyc-cli`](https://github.com/tyc-tech/tyc-cli) ⭐19 (CLI client for it) | 🔐 OAuth | 工商 / 股东 / 风险 / 诉讼; OAuth |
+| 快递100 Kuaidi100 | 🏢 [`kuaidi100-api/kuaidi100-MCP`](https://github.com/kuaidi100-api/kuaidi100-MCP) ⭐14 | 🔑 API Key | parcel tracking across carriers (read-only); enterprise API account — ⚠️ the key travels in the query string and can surface in error messages |
+| PushPlus 推送加 | 🏢 [`pushplus/pushplus-MCP-Server-TypeScript`](https://github.com/pushplus/pushplus-MCP-Server-TypeScript) ⭐3 | 🔑 Token | push to 微信 / email / app — ⚠️ also exposes account tools (AccessKey, token minting, points) with no confirmation; give the agent only what it needs |
+| 小牛翻译 NiuTrans | 🏢 [`NiuTrans/MCP-TextTranslation`](https://github.com/NiuTrans/MCP-TextTranslation) ⭐8 | 🔑 API Key | text translation, 380+ languages |
+| 快递 / 工商 / 发票 / 三要素 | 👥 [`FLYKID/THMCP`](https://github.com/FLYKID/THMCP) ⭐7 | 🔑 API Key | 瞳虎 — logistics, biz-reg, invoice, ID verify |
+| 中国法定节假日 / 调休 | 👥 [`zackchewa/china-mcp-servers`](https://github.com/zackchewa/china-mcp-servers) | 🆓 无需 | 某天是否放假/调休上班 + 整年假期表；零配置无需凭证 — ⚠️ repo archived, unmaintained |
+| Server酱 (微信推送) | 👥 [`zackchewa/china-mcp-servers`](https://github.com/zackchewa/china-mcp-servers) | 🔑 SendKey | 主动推送通知到你自己的微信；SendKey 免费自助 — ⚠️ repo archived, unmaintained |
+| 百度翻译 | 👥 [`zackchewa/china-mcp-servers`](https://github.com/zackchewa/china-mcp-servers) | 🪪 AppID / Secret | 多语种文本翻译（标准版免费额度） — ⚠️ repo archived, unmaintained |
+| 腾讯 Web 搜索 | 🏢 [`Tencent/WebSearchMCP`](https://github.com/Tencent/WebSearchMCP) | ☁️ SecretId / Key | web search |
+| 博查 AI 搜索 Bocha | 🏢 [`BochaAI/bocha-search-mcp`](https://github.com/BochaAI/bocha-search-mcp) ⭐185 | 🔑 API Key | Chinese web search — pages, news, images; the practical way to give a CN agent fresh sources |
+| TextIn 合合信息 (IntSig) | 🏢 [`intsig-textin/textin-mcp`](https://github.com/intsig-textin/textin-mcp) ⭐29 | 🪪 AppID / Secret | document parsing: PDF / image → Markdown, preserving headings, tables and layout |
+| 多平台通知推送 | 👥 [`aahl/mcp-notify`](https://github.com/aahl/mcp-notify) ⭐28 | 🔑 Token | one server pushes to Bark / 微信 / 钉钉 / 飞书 / Telegram |
+| Everything2MCP 本地/私网协议聚合 | 👥 [`shcdwz1234/Everything2MCP`](https://github.com/shcdwz1234/Everything2MCP) | 🆓 无需 · 🔑 可选 Token | OpenAPI/gRPC/MQTT/queues; hot-reload; business writes disabled by default; experimental, limited 飞书/钉钉/企业微信 adapters; `npx everything2mcp` |
 
 ---
 
@@ -553,9 +540,9 @@ Where you *run* MCP servers — connect any entry above to one of these:
 
 ## 🤝 Contributing / 贡献
 
-Know a Chinese-app MCP server that's missing — especially an **official** one? **PRs welcome.** Add a row in the right category with: app name, repo/docs link, official (🏢) or community (👥), and a one-line note. It does **not** have to be a GitHub repo — official MCPs published on a vendor's dev portal or marketplace count too (use a 🌐 docs link). Keep entries to real, working servers.
+Know a Chinese-app MCP server that's missing — especially an **official** one? **PRs welcome.** Add a row in the right category with: app name, repo/docs link, official (🏢) or community (👥), how you sign in (the 授权 Auth column, see the [Legend](#legend)), and a one-line note. It does **not** have to be a GitHub repo — official MCPs published on a vendor's dev portal or marketplace count too (use a 🌐 docs link). Keep entries to real, working servers.
 
-发现遗漏的国内服务 MCP Server（尤其是官方的）？欢迎提 PR。不一定非得是 GitHub 仓库 —— 厂商开发者平台 / 市场上的官方 MCP 同样收录（用 🌐 文档链接）。请只收录真实可用的 server。
+发现遗漏的国内服务 MCP Server（尤其是官方的）？欢迎提 PR。不一定非得是 GitHub 仓库 —— 厂商开发者平台 / 市场上的官方 MCP 同样收录（用 🌐 文档链接）。新增条目请在「授权 Auth」列写明授权方式。请只收录真实可用的 server。
 
 ## License
 

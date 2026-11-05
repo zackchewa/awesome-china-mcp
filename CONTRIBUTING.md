@@ -8,6 +8,7 @@ Thanks for helping keep this index useful!
    - App / service name (中文 + English if helpful)
    - Link to the repo or official docs
    - `🏢` if official/first-party, `👥` if community
+   - How you sign in, in the `授权 Auth` column: 🆓 none · 🔑 API Key / Token · 🔐 OAuth · ☁️ cloud AccessKey · 🪪 AppID / Secret · 📱 扫码 / Cookie
    - A short, factual one-line note (what it does)
 3. Only add servers that are real and working. No vaporware, no dead links.
 4. Prefer the official server first, then list strong community alternatives by stars.
