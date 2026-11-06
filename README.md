@@ -259,7 +259,6 @@ The deepest official coverage in the whole ecosystem — Alibaba Cloud alone shi
 |---|---|---|---|
 | AntV 图表 | 🏢 [`antvis/mcp-server-chart`](https://github.com/antvis/mcp-server-chart) | 🆓 无需 · 🔑 可选 Key | Chart generation; stdio / SSE / Streamable HTTP; default public renderer needs no key and receives chart data; private renderer configurable |
 | 秘塔AI搜索 Metaso | 🏢 [official API portal](https://metaso.cn/search-api/playground) · [MCP guide](https://www.modelscope.cn/mcp/servers/metasota/metaso-search) — `https://metaso.cn/api/mcp` | 🔑 API Key | Multi-source search, webpage reading and RAG Q&A; remote HTTP MCP; own Bearer API key and quota |
-| 中国数据核验 | 👥 [`CCCpan/Gebaini`](https://github.com/CCCpan/Gebaini) ⭐165 | 🆓 无需 | ID / 企业 / 车辆 / OCR / risk |
 | 工商企业大数据 | 👥 [`handaas/mcp-server`](https://github.com/handaas/mcp-server) ⭐12 · [`handaas/enterprise-mcp-server`](https://github.com/handaas/enterprise-mcp-server) | 🔑 SecretId / Key · Token | 工商信息 / 风险 / 股权 / 知识产权 (旷湖) |
 | 企查查 Qichacha | 🏢 official remote MCP ×10 — `https://agent.qcc.com/mcp/{company,risk,ipr,operation,history,executive,regulation,case,tender,document}/stream` ([guide](https://agent.qcc.com/guide)) | 🔑 API Key · 🔐 OAuth | 工商 / 风险 / 知识产权 / 司法 / 招投标; Bearer API key or OAuth, billed per call |
 | 天眼查 Tianyancha | 🏢 official remote MCP — `https://mcp.tianyancha.com/mcp` · 🏢 [`tyc-tech/tyc-cli`](https://github.com/tyc-tech/tyc-cli) ⭐19 (CLI client for it) | 🔐 OAuth | 工商 / 股东 / 风险 / 诉讼; OAuth |
