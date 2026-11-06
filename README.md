@@ -42,7 +42,7 @@ Configure an MCP-compatible client for the servers below — Claude Desktop, Cur
 
 > 🧩 **Also in here:** a [gap map](#gap-map) recording 78 official-API services from the 2026-10-10 survey, plus separately labelled [official Skills and APIs](#official-skills-and-apis). An API or Skill is not automatically an MCP server.
 
-> 🗓️ Full links, stars & archive survey: **2026-10-10** · selected catalog additions and official documentation checked **2026-11-03** · gap map last re-swept **2026-10-10**. The latest update is a documentation review, not an authenticated end-to-end test of every service.
+> 🗓️ Full links, stars & archive survey: **2026-10-10** · selected catalog additions and official documentation checked **2026-11-05** · gap map last re-swept **2026-10-10**. The latest update is a documentation review, not an authenticated end-to-end test of every service.
 
 ### Legend
 `🏢` official / first-party · `👥` community · `⭐` GitHub stars (approx, drift over time) · `🌐` hosted / docs link (not a repo)
@@ -140,6 +140,7 @@ The deepest official coverage in the whole ecosystem — Alibaba Cloud alone shi
 | Doc2X 文档解析 | 🏢 [`NoEdgeAI/doc2x-mcp`](https://github.com/NoEdgeAI/doc2x-mcp) | 🔑 API Key | PDF/image parsing, formula/table extraction, document export & layout JSON; MIT stdio server, own API key required, cloud API usage billed |
 | 飞书 / Lark | 🏢 [`larksuite/lark-openapi-mcp`](https://github.com/larksuite/lark-openapi-mcp) ⭐838 · 👥 [`ztxtxwd/open-feishu-mcp-server`](https://github.com/ztxtxwd/open-feishu-mcp-server) ⭐87 | 🪪 AppID / Secret · 🔐 OAuth | docs, sheets, IM, calendar |
 | 语雀 Yuque | 🏢 [`yuque/yuque-mcp-server`](https://github.com/yuque/yuque-mcp-server) ⭐248 (server) · [`yuque/yuque-ecosystem`](https://github.com/yuque/yuque-ecosystem) ⭐230 (server+skills+plugin bundle) · 👥 [`yehuoshun/yuque-ai-mcp`](https://github.com/yehuoshun/yuque-ai-mcp) ⭐7 (62 tools; 17 need a browser session cookie) | 🔑 Token / 📱 Cookie | knowledge base CRUD, search, boards, statistics, recycle |
+| 钉钉 DingTalk (企业内部应用) | 🏢 [`open-dingtalk/dingtalk-mcp`](https://github.com/open-dingtalk/dingtalk-mcp) ⭐28 · [auth docs](https://open.dingtalk.com/document/orgapp/obtain-orgapp-token) | 🪪 AppID / Secret | Contacts, departments, work notifications, todos, calendar, check-in, bot messages; stdio via npx, in-house app Client ID/Secret; modules enabled via ACTIVE_PROFILES. Existing README 钉钉 row lists community servers only: merge or add this as the official entry |
 | 钉钉 DingTalk | 👥 [`hykfft/mcp-dingtalk-doc`](https://github.com/hykfft/mcp-dingtalk-doc) ⭐56 (docs) · [`keithyt06/quick-dingtalk-mcp`](https://github.com/keithyt06/quick-dingtalk-mcp) ⭐8 (user identity, wraps the official `dws` CLI) · [`Shawyeok/mcp-dingding-bot`](https://github.com/Shawyeok/mcp-dingding-bot) ⭐12 (群机器人) | 📱 Cookie / 🔐 OAuth / 🔑 Token | docs, personal identity, group robot |
 | 腾讯文档 Tencent Docs | 🏢 official remote MCP — `https://docs.qq.com/openapi/mcp` ([auth docs](https://docs.qq.com/open/auth/mcp.html)) | 🔑 Token | read/write docs, sheets, slides |
 | 腾讯会议 Tencent Meeting | 🏢 official remote MCP — `https://mcp.meeting.tencent.com/mcp/wemeet-open/v1` ([docs](https://meeting.tencent.com/ai-skill.html)) | 🔑 Token | schedule meetings, participants, recordings, transcripts |
@@ -160,6 +161,9 @@ The deepest official coverage in the whole ecosystem — Alibaba Cloud alone shi
 | 企业微信 WeCom (群机器人) | 👥 [`gotoolkits/mcp-wecombot-server`](https://github.com/gotoolkits/mcp-wecombot-server) ⭐37 · [`loonghao/wecom-bot-mcp-server`](https://github.com/loonghao/wecom-bot-mcp-server) ⭐104 | 🔑 Webhook Key | send text/markdown/image/news to a WeCom group robot webhook · loonghao adds files/images; ⚠️ a failed send logs the full webhook URL (the secret), and image URLs are fetched from any host |
 | 企业微信 WeCom (API 连接器) | — still none · ops-bot: [`opsre/ZenOps`](https://github.com/opsre/ZenOps) ⭐165 | — | no server covers the WeCom app API (contacts, approvals, messages to members). ZenOps queries ops resources via 钉钉/飞书/企微 bots — not an API connector. PR one if you build it |
 | 教务宝 JWB | 🏢 official remote MCP — `https://card.jwbpro.com/open/jwb/mcp` ([guide](https://www.jwbpro.com/mcp/)) | 🔐 OAuth · 🔑 API Key | education / training-institution SaaS: students, classes, timetables, contracts, payments, reports; OAuth 2.1 + PKCE or an institution `jwb-sk-` key (key needs an active subscription) — ⚠️ write tools such as CRM lead follow-up change real business data |
+| 问卷星 Wenjuanxing (WJX) | 🏢 [`wjxcom/wjx-ai-kit`](https://github.com/wjxcom/wjx-ai-kit) ⭐23 · [API docs](https://www.wjx.cn/help/help.aspx?catid=140) | 🔑 API Key | TypeScript SDK + CLI + MCP server over the WJX OpenAPI: surveys, questions, responses, pause/resume collection (tools can modify surveys); API key needs account API access |
+| 问卷网 Wenjuan | 🏢 [official MCP](https://mcp.wenjuan.com) — `https://mcp.wenjuan.com` | 🔑 API Key | Create surveys, edit questions, view and export responses; WJ-API-Key from 个人中心 → API 对接 → MCP 对接 |
+| FlowUs 息流 | 🏢 official remote MCP — `https://mcp.flowus.cn/message` | 🔐 OAuth | Read/write workspace pages, databases and blocks; OAuth 2.1 (scope `all`); paid workspace required per FlowUs developer page |
 
 ## 💻 开发工具 · DevTools
 
@@ -186,6 +190,7 @@ The deepest official coverage in the whole ecosystem — Alibaba Cloud alone shi
 | 华尔街见闻 / 选股宝 | 🏢 official remote MCP — `https://xgb-mcp-api.xuangubao.cn/mcp` ([token page](https://wallstreetcn.com/org-mcp/token)) | 🔑 Token | 大涨股 sectors + reasons, global finance articles and full text (rolling ~2 months); no live quotes |
 | 熔岩 Lava (A股消息面热度) | 🏢 official remote MCP — `https://lava.ai-dolphin.com/subscribe/v1/mcp` ([docs](https://lava.ai-dolphin.com/subscribe/docs)) · [`dustinliang666-blip/lava-mcp`](https://github.com/dustinliang666-blip/lava-mcp) (Agent Skill) | 🔑 API Key · 🔐 OAuth | news-flow heat for A股 stocks and concept boards: hot lists, first mentions, hourly windows, daily panels, institution/KOL coverage; read-only. Bearer `lvk_` key or OAuth; ¥100 starter voucher, then about ¥0.005 per call. No live quotes |
 | A股 Skill 集合 | 👥 [`shouldnotappearcalm/a-share-skill`](https://github.com/shouldnotappearcalm/a-share-skill) ⭐243 | 🆓 无需 | quant, K-line, indicators — Agent Skills collection (not an MCP server) |
+| 长桥证券 Longbridge | 🏢 [`longbridge/longbridge-mcp`](https://github.com/longbridge/longbridge-mcp) ⭐15 · [official MCP docs](https://open.longbridge.com/docs/mcp) — `https://openapi.longportapp.com/mcp` | 🔐 OAuth | Account, positions, watchlist, orders, quotes and news; hosted Streamable HTTP, OAuth 2.1 (Longbridge docs list the longportapp.com domain; older listings show openapi.longbridge.com). Account has trading tools: check scope before authorizing |
 
 > 💡 **券商 (brokerages):** 广发证券, 国泰君安, 中信 etc. have launched internal AI "Skills" (智能投顾 贝塔牛, 易淘金, GF-Quant…), but these are app-internal agent capabilities, **not public MCP servers** you can connect to. For programmatic A股 market data, use AKShare / Tushare / 东方财富 above. PR a row if/when any brokerage ships a public MCP.
 
@@ -244,6 +249,9 @@ The deepest official coverage in the whole ecosystem — Alibaba Cloud alone shi
 | Hyper3D / Rodin | 🏢 [official remote MCP](https://hyper3d.ai/features/mcp) — `https://api.hyper3d.com/api/mcp` | 🔐 OAuth | 3D generation, progress queries and result links; browser authorization selects the billing workspace; plan, credits and permissions apply |
 | Mureka | 🏢 [`SkyworkAI/Mureka-mcp`](https://github.com/SkyworkAI/Mureka-mcp) | 🔑 API Key | Lyrics, songs and instrumental music; own API key and credits; upstream setup targets international `api.mureka.ai`, while Launch's API connection uses the China service |
 | DeepSeek / Moonshot Kimi | model providers (OpenAI-compatible) — add via your client's model config | 🔑 API Key | — |
+| Vidu 生数科技 | 🏢 [`shengshu-ai/vidu-mcp`](https://github.com/shengshu-ai/vidu-mcp) ⭐5 | 🔑 API Key | Text-to-video, image-to-video, reference-to-video and start-end-frame video; stdio via uvx, Python 3.10+; Vidu platform API credits required |
+| FastGPT | 🏢 [official MCP server feature](https://doc.fastgpt.cn/docs/introduction/guide/dashboard/mcp_server) — `https://<host>/api/mcp/app/<MCP_KEY>/mcp` | 🔑 API Key | Expose your published FastGPT apps/agents as MCP tools (Streamable HTTP; SSE for self-hosted); MCP_KEY in the URL is the credential; running apps consumes credits |
+| 讯飞星辰 Agent 工作流 iFlytek Astron | 🏢 [`iflytek/ifly-workflow-mcp-server`](https://github.com/iflytek/ifly-workflow-mcp-server) ⭐28 | 🔑 API Key | Call a published iFlytek Agent workflow as an MCP tool; needs flow_id and API Key:API Secret in config.yaml; simple implementation, activity unclear |
 
 ## 🧰 实用工具 · Utilities
 
@@ -267,6 +275,8 @@ The deepest official coverage in the whole ecosystem — Alibaba Cloud alone shi
 | TextIn 合合信息 (IntSig) | 🏢 [`intsig-textin/textin-mcp`](https://github.com/intsig-textin/textin-mcp) ⭐29 | 🪪 AppID / Secret | document parsing: PDF / image → Markdown, preserving headings, tables and layout |
 | 多平台通知推送 | 👥 [`aahl/mcp-notify`](https://github.com/aahl/mcp-notify) ⭐28 | 🔑 Token | one server pushes to Bark / 微信 / 钉钉 / 飞书 / Telegram |
 | Everything2MCP 本地/私网协议聚合 | 👥 [`shcdwz1234/Everything2MCP`](https://github.com/shcdwz1234/Everything2MCP) | 🆓 无需 · 🔑 可选 Token | OpenAPI/gRPC/MQTT/queues; hot-reload; business writes disabled by default; experimental, limited 飞书/钉钉/企业微信 adapters; `npx everything2mcp` |
+| 腾讯云联网搜索 Tencent Cloud Web Search | 🏢 [`Tencent/WebSearchMCP`](https://github.com/Tencent/WebSearchMCP) ⭐8 | ☁️ AccessKey | Web search over Sogou sources via Tencent Cloud Web Search API; SecretId/SecretKey, API must be enabled and is billed per call |
+| 百度搜索 Baidu AI Search | 🏢 [`baidubce/app-builder` ai_search](https://github.com/baidubce/app-builder/tree/master/python/mcp_server/ai_search) — `https://qianfan.baidubce.com/v2/ai_search/mcp` | 🔑 API Key | Real-time web search for pages and news via Qianfan AppBuilder; Streamable HTTP/SSE/stdio; Qianfan API Key; free daily quota per vendor console (100/day reported) |
 
 ---
 
@@ -278,15 +288,42 @@ These complement the MCP catalog. The linked integrations below are Skills, CLIs
 
 这些条目补充官方 Skill、CLI 和 HTTP API 接入方式，不计入 MCP Server 或下方历史空缺清单。上游功能与托管产品实际开放的操作范围可能不同。
 
-| Service | Official source | Integration and requirements |
-|---|---|---|
-| ima | 🏢 [official Skill and credentials](https://ima.qq.com/agent-interface) | Search/read/create notes and query/import knowledge-base content; own ima API credentials; official Agent Skill |
-| 百度文库 AI PPT | 🏢 [personal PPT Skill](https://github.com/baidu-netdisk/bdpan-storage/tree/main/skills/baidu-wenku-aippt-personal) | Generate a presentation from a topic with the bdpan CLI and return a preview link; personal Baidu authorization and account quota apply |
-| 中国移动云盘 | 🏢 [official platform](https://open.yun.139.com/) · [cm-cloud-manage Skill](https://skillhub.cn/skills/org-vt43r0t0/cm-cloud-manage) | File search, browsing and management with account authorization; upstream includes writes, while Launch's reviewed integration currently exposes read-only file queries |
-| AiPPT | 🏢 [official Skill guide](https://open.aippt.cn/docs/zh/claw/docs.html) · [API access](https://open.aippt.cn/docs/zh/guide/access.html) | PPT generation and download; official guide links `huiyuan1234/aipptskill`; platform application and enterprise verification for App Key / Secret Key |
-| 美图 / MeituHub | 🏢 [official API and CLI guide](https://www.meituhub.com/zh-cn/docs?id=150) | Image/video creative APIs and meitu-cli; OpenAPI uses AK/SK request signing; usage consumes account credits |
-| PicWish / 佐糖 | 🏢 [China API docs](https://picwish.cn/background-removal-api-doc) · [API plans](https://picwish.cn/api-pricing) | Background removal and image enhancement; China-site API key and developer API credits |
-| LiblibAI 哩布哩布 | 🏢 [official API platform](https://www.liblib.art/apis) | Model/workflow image generation; API credits are separate from website membership credits; model and workflow licensing applies |
+| Service | Official source | 授权 Auth | Integration and requirements |
+|---|---|---|---|
+| ima | 🏢 [official Skill and credentials](https://ima.qq.com/agent-interface) | 🔑 API Key | Search/read/create notes and query/import knowledge-base content; own ima API credentials; official Agent Skill |
+| 百度文库 AI PPT | 🏢 [personal PPT Skill](https://github.com/baidu-netdisk/bdpan-storage/tree/main/skills/baidu-wenku-aippt-personal) | 🔐 OAuth | Generate a presentation from a topic with the bdpan CLI and return a preview link; personal Baidu authorization and account quota apply |
+| 中国移动云盘 | 🏢 [official platform](https://open.yun.139.com/) · [cm-cloud-manage Skill](https://skillhub.cn/skills/org-vt43r0t0/cm-cloud-manage) | 🔐 OAuth | File search, browsing and management with account authorization; upstream includes writes, while Launch's reviewed integration currently exposes read-only file queries |
+| AiPPT | 🏢 [official Skill guide](https://open.aippt.cn/docs/zh/claw/docs.html) · [API access](https://open.aippt.cn/docs/zh/guide/access.html) | 🪪 AppID / Secret | PPT generation and download; official guide links `huiyuan1234/aipptskill`; platform application and enterprise verification for App Key / Secret Key |
+| 美图 / MeituHub | 🏢 [official API and CLI guide](https://www.meituhub.com/zh-cn/docs?id=150) | 🔑 AK / SK | Image/video creative APIs and meitu-cli; OpenAPI uses AK/SK request signing; usage consumes account credits |
+| PicWish / 佐糖 | 🏢 [China API docs](https://picwish.cn/background-removal-api-doc) · [API plans](https://picwish.cn/api-pricing) | 🔑 API Key | Background removal and image enhancement; China-site API key and developer API credits |
+| LiblibAI 哩布哩布 | 🏢 [official API platform](https://www.liblib.art/apis) | 🔑 Access / Secret Key | Model/workflow image generation; API credits are separate from website membership credits; model and workflow licensing applies |
+| 网易企业邮箱 NetEase Qiye Mail | 🏢 [official client setup docs](https://qiye.163.com/help/af988e.html) | 🔑 授权码 | IMAP/SMTP mailbox access with a client authorization code; admin must enable client access |
+| 阿里企业邮箱 Alibaba Mail | 🏢 [official client setup docs](https://help.aliyun.com/zh/document_detail/444269.html) | 🔑 授权码 | IMAP mailbox access with a client-specific security password; admin must enable it |
+| 微信小程序发布 WeChat Mini Program CI | 🏢 [official miniprogram-ci docs](https://developers.weixin.qq.com/miniprogram/dev/devtools/ci.html) | 🪪 AppID / Secret | Official Node package to build, preview and upload mini programs without the desktop DevTools; needs the mini program AppID and an upload private key, plus an IP whitelist if enabled |
+| 腾讯企业邮箱 Tencent Exmail | 🏢 [official client password docs](https://open.work.weixin.qq.com/help2/pc/19902) | 🔑 授权码 | IMAP/SMTP mailbox access with a client-specific password; admin must enable it |
+| 微信支付 WeChat Pay | 🏢 [official merchant API v3 docs](https://pay.weixin.qq.com/doc/v3/merchant/4012365336) | 🪪 商户号 / 证书 | Direct-merchant APIv3: orders, refunds, bill downloads; requests signed with merchant certificate and private key (merchant ID, cert serial, platform public key)|
+| 友盟+ U-App Umeng | 🏢 [official OpenAPI docs](https://developer.umeng.com/open-api/ns/com.umeng.uapp/apply) | 🔑 API Key | App list and install/active/launch statistics via OpenAPI; apiKey and apiSecurity from the Umeng console, OpenAPI access must be applied for |
+| 即梦AI 图片生成 Jimeng (Volcengine) | 🏢 [official API docs](https://www.volcengine.com/docs/6444/2697409) | 🔑 API Key | Jimeng 4.0/4.6 text-to-image, image-to-image and multi-image composition up to 4K; Volcengine API key, billed per image |
+| 微信小店 WeChat Shop | 🏢 [official Mini Shop API docs](https://developers.weixin.qq.com/doc/store/API/) | 🪪 AppID / Secret | Merchant self-developed access to own orders and products; AppID/AppSecret, server IP must be whitelisted |
+| 有赞 Youzan | 🏢 [official open API docs](https://doc.youzanyun.com/resource/doc/3011/3011) | 🪪 AppID / Secret | Self-use merchant app: shop orders, logistics and products; client_id/client_secret plus shop kdt_id |
+| 乐橙 Imou | 🏢 [official open platform docs](https://open.imou.com/document/introduction/) | 🪪 AppID / Secret | Camera list/online status, snapshots, PTZ and privacy mode via open platform; AppId/AppSecret from a developer account |
+| 云之家群机器人 Yunzhijia | 🏢 [official bot docs](https://www.yunzhijia.com/opendocs/docs.html) | 🔑 Webhook URL | Send text notifications to a group chat via webhook URL; group admin must create the bot (public cloud). Write-only |
+| 微伴助手 Weiban | 🏢 [official open API docs](https://openapi.weibanzhushou.com/) | 🪪 AppID / Secret | Read departments, staff, customer tags and material library; corp ID and open-platform secret, requires Weiban base seat and API authorization |
+| 网易七鱼 Qiyu | 🏢 [official open API docs](https://qiyukf.apifox.cn/doc-437010) | 🪪 AppID / Secret | Query customer-service groups and agents; AppKey/AppSecret, Professional edition or above |
+| 123云盘 123pan | 🏢 [official Open API docs](https://123yunpan.yuque.com/org-wiki-123yunpan-muaork/cr6ced) | 🪪 AppID / Secret | Browse directories, search files by name, read file details; read-only use; needs a developer entitlement pack; Client ID + Client Secret |
+| V2EX | 🏢 [official API 2.0 docs](https://www.v2ex.com/help/api) | 🔑 Token | Read node topics, replies, notifications and profile; read-only; Personal Access Token from settings |
+| 通义万相 Wan (Tongyi Wanxiang) | 🏢 [official API docs](https://help.aliyun.com/zh/model-studio/text-to-image-v2-api-reference) · [video](https://help.aliyun.com/zh/model-studio/text-to-video-api-reference) | 🔑 API Key | Text-to-image and text-to-video via Alibaba Cloud Model Studio (百炼); billed per use |
+| 通义千问语音合成 Qwen-TTS | 🏢 [official API docs](https://help.aliyun.com/zh/model-studio/qwen-tts-api) | 🔑 API Key | Text-to-speech with multiple voices and dialects (e.g. Beijing, Shanghai, Cantonese) via Alibaba Cloud Model Studio; billed per use |
+| 通义语音识别 Fun-ASR | 🏢 [official API docs](https://help.aliyun.com/zh/model-studio/fun-asr-recorded-speech-recognition-http-api) | 🔑 API Key | Transcribe recorded audio/video files with timestamps and speaker separation (up to 12 hours); via Alibaba Cloud Model Studio; billed by duration |
+| 豆包 Seedance 视频生成 | 🏢 [official API docs](https://www.volcengine.com/docs/82379/1520757) | 🔑 API Key | Seedance 2.0 / 2.5 text-to-video and image-to-video (first/last frame, multi-image reference) with optional audio via Volcengine Ark; billed by resolution and duration |
+| 百度千帆应用 Qianfan App | 🏢 [official API docs](https://cloud.baidu.com/doc/qianfan-api/s/7m7wqq361) | 🔑 API Key | Run apps/agents published on Qianfan AppBuilder via API; app ID + API Key; usage consumes quota |
+| 阿里云百炼应用 Model Studio Apps | 🏢 [official API docs](https://help.aliyun.com/zh/model-studio/call-single-agent-application) | 🔑 API Key | Call agent/workflow applications published in Model Studio via API; app ID + API Key; usage consumes quota |
+| 火山方舟应用 Ark Bot | 🏢 [official API docs](https://www.volcengine.com/docs/82379/1526787) | 🔑 API Key | Call no-code apps (Bots) built on Volcengine Ark, with their web-search and knowledge-base plugins; Bot ID + Ark API Key; usage consumes quota |
+| 理杏仁 Lixinger | 🏢 [official Open API docs](https://www.lixinger.com/open/api/doc) | 🔑 Token | A-share / HK / US valuation percentiles, financial statements, announcements and macro data; read-only; token from the open platform |
+| 得到大脑 / Get笔记 | 🏢 [official OpenAPI](https://www.biji.com/openapi) | 🔑 API Key | List and read personal notes and knowledge bases via the official OpenAPI; API Key + Client ID; active membership required; community MCP: [`iswalle/getnote-mcp`](https://github.com/iswalle/getnote-mcp) |
+| 阿里云短信 Alibaba Cloud SMS | 🏢 [official API docs](https://help.aliyun.com/zh/sms/developer-reference/api-dysmsapi-2017-05-25-overview) | ☁️ AccessKey | Query approved signatures/templates, send domestic SMS by template, check delivery status; billed per message; reachable via the generic Alibaba Cloud OpenAPI MCP (product code Dysmsapi) |
+| 腾讯云短信 Tencent Cloud SMS | 🏢 [official API docs](https://cloud.tencent.com/document/product/382/13444) | ☁️ SecretId / Key | Query approved signatures/templates and send domestic SMS by template; SecretId/SecretKey plus SmsSdkAppId and region; billed per message |
+| 赛邮 SUBMAIL | 🏢 [official API docs](https://www.mysubmail.com/documents) | 🪪 AppID / Secret | Read SMS delivery logs and remaining SMS quota for your own app; read-only; SMS AppID + AppKey |
 
 ---
 
