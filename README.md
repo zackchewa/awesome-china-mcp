@@ -112,6 +112,7 @@ The deepest official coverage in the whole ecosystem — Alibaba Cloud alone shi
 | 微博 Weibo | 👥 [`qinyuanpei/mcp-server-weibo`](https://github.com/qinyuanpei/mcp-server-weibo) ⭐63 | user / content / hot-search<br><sub>🆓&nbsp;无需 · 📱&nbsp;可选扫码</sub> |
 | 抖音 Douyin (发布) | 👥 [`lancelin111/douyin-mcp-server`](https://github.com/lancelin111/douyin-mcp-server) ⭐35 | automated video upload<br><sub>📱&nbsp;扫码登录</sub> |
 | 抖音 / B站 / 公众号 / 播客 (采集) | 👥 [`chubbyguan/chubbyskills`](https://github.com/chubbyguan/chubbyskills) ⭐1.2k | content-ingestion Agent Skills + a knowledge-base MCP (not per-app servers)<br><sub>🆓&nbsp;无需 · 📱&nbsp;可选&nbsp;Cookie</sub> |
+| 抖音 / 小红书 / 公众号 / 视频号 / B站 / 微博 / 快手 (数据) | 👥 [`okdataapi/okdata`](https://github.com/okdataapi/okdata) · [接入文档](https://okdata.online/zh/docs/mcp/) | third-party data service, not affiliated with the platforms: hosted Streamable HTTP — `https://api.okdata.online/mcp`, or local stdio `npx -y @okdata/mcp`; public data from 17 platforms (about 200 endpoints, also TikTok, X, YouTube); Bearer API key, paid per call from $0.0001, failed calls are free; `find` / `describe` / `account` work without a key<br><sub>🔑&nbsp;API&nbsp;Key</sub> |
 | AIHOT（中文 AI 资讯） | 🏢 🌐 [官方 MCP 文档](https://aihot.news/agent?tab=mcp) · source [`KKKKhazix/AIHOT`](https://github.com/KKKKhazix/AIHOT) ⭐7.1k | hosted Streamable HTTP — `https://aihot.news/api/mcp`; anonymous read-only topic search, hot events, daily / weekly / monthly briefs<br><sub>🆓&nbsp;无需</sub> |
 
 ## 🛒 电商 · E-commerce
