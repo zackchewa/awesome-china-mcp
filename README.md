@@ -226,6 +226,7 @@ The deepest official coverage in the whole ecosystem — Alibaba Cloud alone shi
 |---|---|---|
 | 网易云 / QQ音乐 / 酷狗 / 酷我 | 👥 [`ELDment/Meting-Agent`](https://github.com/ELDment/Meting-Agent) ⭐112 | multi-platform music API proxy for AI<br><sub>🆓&nbsp;无需</sub> |
 | 网易云音乐 NetEase | 👥 [`Cheiineeey/netease-music-mcp`](https://github.com/Cheiineeey/netease-music-mcp) ⭐114 | play, lyrics sync, playlist mgmt<br><sub>📱&nbsp;Cookie</sub> |
+| No Stairs Please | 🏢 [`nostairsplease.com/mcp`](https://nostairsplease.com/mcp) | live-music venue directory & tour routing MCP server<br><sub>🆓&nbsp;OAuth 2.1</sub> |
 
 ## 🏠 智能家居 / IoT · Smart Home
 
