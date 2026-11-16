@@ -277,6 +277,7 @@ The deepest official coverage in the whole ecosystem — Alibaba Cloud alone shi
 | Everything2MCP 本地/私网协议聚合 | 👥 [`shcdwz1234/Everything2MCP`](https://github.com/shcdwz1234/Everything2MCP) | OpenAPI/gRPC/MQTT/queues; hot-reload; business writes disabled by default; experimental, limited 飞书/钉钉/企业微信 adapters; `npx everything2mcp`<br><sub>🆓&nbsp;无需 · 🔑&nbsp;可选&nbsp;Token</sub> |
 | 腾讯云联网搜索 Tencent Cloud Web Search | 🏢 [`Tencent/WebSearchMCP`](https://github.com/Tencent/WebSearchMCP) ⭐8 | Web search over Sogou sources via Tencent Cloud Web Search API; SecretId/SecretKey, API must be enabled and is billed per call<br><sub>☁️&nbsp;AccessKey</sub> |
 | 百度搜索 Baidu AI Search | 🏢 [`baidubce/app-builder` ai_search](https://github.com/baidubce/app-builder/tree/master/python/mcp_server/ai_search) — `https://qianfan.baidubce.com/v2/ai_search/mcp` | Real-time web search for pages and news via Qianfan AppBuilder; Streamable HTTP/SSE/stdio; Qianfan API Key; free daily quota per vendor console (100/day reported)<br><sub>🔑&nbsp;API&nbsp;Key</sub> |
+| 百度搜索 Baidu Search (网页结果) | 👥 [`johnisanerd/alphaosint-mcp-servers` baidu-search](https://github.com/johnisanerd/alphaosint-mcp-servers/tree/main/servers/baidu-search) — `https://mcp.apify.com/?tools=johnvc/Baidu-Search-Scraper` | Baidu web results (organic + related searches) with device, location and time filters, paginated; hosted Streamable HTTP on Apify, paid per page<br><sub>🔑&nbsp;Token · 🔐&nbsp;OAuth</sub> |
 
 ---
 
