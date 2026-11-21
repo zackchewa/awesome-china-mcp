@@ -253,6 +253,7 @@ The deepest official coverage in the whole ecosystem — Alibaba Cloud alone shi
 | Vidu 生数科技 | 🏢 [`shengshu-ai/vidu-mcp`](https://github.com/shengshu-ai/vidu-mcp) ⭐5 | Text-to-video, image-to-video, reference-to-video and start-end-frame video; stdio via uvx, Python 3.10+; Vidu platform API credits required<br><sub>🔑&nbsp;API&nbsp;Key</sub> |
 | FastGPT | 🏢 [official MCP server feature](https://doc.fastgpt.cn/docs/introduction/guide/dashboard/mcp_server) — `https://<host>/api/mcp/app/<MCP_KEY>/mcp` | Expose your published FastGPT apps/agents as MCP tools (Streamable HTTP; SSE for self-hosted); MCP_KEY in the URL is the credential; running apps consumes credits<br><sub>🔑&nbsp;API&nbsp;Key</sub> |
 | 讯飞星辰 Agent 工作流 iFlytek Astron | 🏢 [`iflytek/ifly-workflow-mcp-server`](https://github.com/iflytek/ifly-workflow-mcp-server) ⭐28 | Call a published iFlytek Agent workflow as an MCP tool; needs flow_id and API Key:API Secret in config.yaml; simple implementation, activity unclear<br><sub>🔑&nbsp;API&nbsp;Key</sub> |
+| i2v.ai | 🏢 official remote MCP — `https://i2v.ai/api/mcp` ([guide](https://i2v.ai/docs/mcp)) · 🏢 [`i2v-ai/i2v-mcp`](https://github.com/i2v-ai/i2v-mcp) | image & video generation across 12 image / 16 video models; USD quote before every job, `maxCostUsd` ceiling and `idempotencyKey` on submit; 13 tools; OAuth 2.1 with `mcp:read`/`mcp:write` scopes; also `npx @i2v-ai/cli mcp` for local stdio<br><sub>🔐&nbsp;OAuth&nbsp;·&nbsp;🔑&nbsp;API&nbsp;Key</sub> |
 
 ## 🧰 实用工具 · Utilities
 
